@@ -16,10 +16,25 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-typography`,
+    },
+    {
+      resolve: "gatsby-plugin-eslint",
+      options: {
+        // 删除无效的选项
+        exclude: ["node_modules", ".cache", "public"], // 确保这部分是正确的
+        stages: ["develop"],
+        // 删除不支持的选项字段
+        // options: {
+        //   emitWarning: true,
+        //   failOnError: false,
+        // },
+      },
     },
   ],
 };
