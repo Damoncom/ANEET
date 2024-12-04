@@ -1,4 +1,4 @@
-import { Content, Logo, Social } from "./style";
+import { Content, Logo, Social, Li, Img } from "./style";
 import { StaticImage } from "gatsby-plugin-image";
 import { socialData } from "./data";
 
@@ -14,7 +14,13 @@ const Header: React.FC = () => {
             style={{ objectFit: "cover" }}
           />
         </Logo>
-        <Social></Social>
+        <Social>
+          {socialData.map((item) => (
+            <Li key={item.id}>
+              <Img alt={item.name} src={item.icon}></Img>
+            </Li>
+          ))}
+        </Social>
       </Content>
     </div>
   );
