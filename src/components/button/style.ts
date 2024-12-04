@@ -19,8 +19,10 @@ export const StyledButton = styled.div<StyledButtonProps>`
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize};
   cursor: pointer;
+  display: flex;
+  align-items: center;
 
   &:hover {
-    filter: brightness(90%);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 `;
