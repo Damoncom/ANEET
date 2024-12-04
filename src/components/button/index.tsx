@@ -1,6 +1,7 @@
 import React from "react";
 import { StyledButton } from "./style";
-
+import LittleIcon from "../littleIcon";
+import searchIcon from "../header/icon/social/search.jpg";
 // 定义 ButtonProps 接口
 interface ButtonProps {
   borderRadius?: "small" | "medium" | "large";
@@ -11,7 +12,7 @@ interface ButtonProps {
   color?: "white" | "red";
   fontSize?: "small" | "medium" | "large";
   onClick?: () => void;
-  children: React.ReactNode;
+  children?: React.ReactNode; // ?:把属性标记为可选
 }
 
 // 定义预设值
@@ -79,7 +80,9 @@ const Button: React.FC<ButtonProps> = ({
       fontSize={fontSizeValues[fontSize]}
       onClick={onClick}
     >
-      {children}
+      {/* TODO:添加query,使得alt是照片本来的名字 */}
+      <LittleIcon src={searchIcon} alt="search" width="medium" />
+      {children && children} {/*仅在children存在时才渲染 */}
     </StyledButton>
   );
 };
