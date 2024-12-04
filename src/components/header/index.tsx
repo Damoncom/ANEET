@@ -22,7 +22,7 @@ const Header: React.FC = () => {
             </Li>
           ))}
         </Social>
-        <Button />
+        <Button isIcon={true} />
       </Content>
     </div>
   );

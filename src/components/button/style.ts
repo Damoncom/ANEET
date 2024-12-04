@@ -8,6 +8,7 @@ interface StyledButtonProps {
   border: string;
   color: string;
   fontSize: string;
+  isIcon: boolean;
 }
 
 export const StyledButton = styled.div<StyledButtonProps>`
@@ -25,4 +26,12 @@ export const StyledButton = styled.div<StyledButtonProps>`
   &:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
+`;
+
+export const Input = styled.input`
+  width: 50%;
+  height: 90%;
+  font-size: 14px;
+  color: #515151;
+  margin-left: 10px;
 `;

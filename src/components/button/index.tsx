@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledButton } from "./style";
+import { StyledButton, Input } from "./style";
 import LittleIcon from "../littleIcon";
 import searchIcon from "../header/icon/social/search.jpg";
 // 定义 ButtonProps 接口
@@ -13,6 +13,7 @@ interface ButtonProps {
   fontSize?: "small" | "medium" | "large";
   onClick?: () => void;
   children?: React.ReactNode; // ?:把属性标记为可选
+  isIcon: boolean;
 }
 
 // 定义预设值
@@ -57,7 +58,6 @@ const fontSizeValues = {
   large: "32px",
 };
 
-// Button 组件
 const Button: React.FC<ButtonProps> = ({
   borderRadius = "medium",
   backgroundColor = "white",
@@ -68,6 +68,7 @@ const Button: React.FC<ButtonProps> = ({
   fontSize = "small",
   onClick,
   children,
+  isIcon,
 }) => {
   return (
     <StyledButton
@@ -79,9 +80,11 @@ const Button: React.FC<ButtonProps> = ({
       color={colorValues[color]}
       fontSize={fontSizeValues[fontSize]}
       onClick={onClick}
+      isIcon={isIcon}
     >
       {/* TODO:添加query,使得alt是照片本来的名字 */}
-      <LittleIcon src={searchIcon} alt="search" width="medium" />
+      {isIcon && <LittleIcon src={searchIcon} alt="search" width="medium" />}
+      {searchIcon && <Input placeholder="Buscar" />}
       {children && children} {/*仅在children存在时才渲染 */}
     </StyledButton>
   );
