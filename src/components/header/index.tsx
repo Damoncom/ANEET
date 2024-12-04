@@ -3,12 +3,15 @@ import { StaticImage } from "gatsby-plugin-image";
 import { socialData } from "./data";
 import Button from "../button/index";
 import LittleIcon from "../littleIcon";
+import searchIcon from "../header/icon/social/search.jpg";
+import { Input } from "./style";
+import TextBox from "../textBox";
 
 const Header: React.FC = () => {
   console.log("socialData", socialData);
   return (
     <div>
-      <Content>
+      <Content style={{ backgroundColor: "white" }}>
         <Logo>
           <StaticImage
             alt="logo"
@@ -27,11 +30,42 @@ const Header: React.FC = () => {
                 marginLeft="small"
                 maxWidth="regular"
               />
-              {/* <Img alt={item.name} src={item.icon}></Img> */}
             </Li>
           ))}
         </Social>
-        <Button isIcon={true} />
+        <Button>
+          {/* TODO:添加query,使得alt是照片本来的名字 */}
+          <LittleIcon src={searchIcon} alt="search" width="medium" />
+          <Input placeholder="Buscar" />
+        </Button>
+      </Content>
+      <Content>
+        <Button width="medium" height="large" borderRadius="medium">
+          <LittleIcon src={searchIcon} alt="search" width="medium" />
+          <div
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          ></div>
+          {/* <TextBox>Home</TextBox> */}
+        </Button>
+        <Button
+          width="medium"
+          height="large"
+          borderRadius="medium"
+          children="Mi Espacio"
+        />
+        <Button
+          width="medium"
+          height="large"
+          borderRadius="medium"
+          children="Herramientas"
+        />
       </Content>
     </div>
   );
