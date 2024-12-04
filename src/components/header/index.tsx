@@ -1,6 +1,7 @@
 import { Content, Logo, Social, Li, Img } from "./style";
 import { StaticImage } from "gatsby-plugin-image";
 import { socialData } from "./data";
+import Button from "../button/index";
 
 const Header: React.FC = () => {
   console.log("socialData", socialData);
@@ -21,6 +22,7 @@ const Header: React.FC = () => {
             </Li>
           ))}
         </Social>
+        <Button children="search" />
       </Content>
     </div>
   );
