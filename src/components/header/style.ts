@@ -17,7 +17,7 @@ export const Logo = styled.div`
 
 export const Social = styled.ul`
   min-width: 208px;
-  width: 13%;
+  width: 15%;
   padding: 10px;
   margin: 0 0 0 50%;
   white-space: nowrap;

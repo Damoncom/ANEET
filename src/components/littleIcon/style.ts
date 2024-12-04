@@ -4,6 +4,7 @@ interface StyledImgProps {
   width: string;
   height: string;
   marginLeft: string;
+  maxWidth: string;
 }
 
 export const StyledImg = styled.img<StyledImgProps>`
@@ -12,4 +13,5 @@ export const StyledImg = styled.img<StyledImgProps>`
   object-fit: cover; // 保持图片比例
   margin: 0;
   margin-left: ${(props) => props.marginLeft};
+  max-width: ${(props) => props.maxWidth};
 `;

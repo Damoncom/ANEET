@@ -1,7 +1,8 @@
-import { Content, Logo, Social, Li, Img } from "./style";
+import { Content, Logo, Social, Li } from "./style";
 import { StaticImage } from "gatsby-plugin-image";
 import { socialData } from "./data";
 import Button from "../button/index";
+import LittleIcon from "../littleIcon";
 
 const Header: React.FC = () => {
   console.log("socialData", socialData);
@@ -18,7 +19,15 @@ const Header: React.FC = () => {
         <Social>
           {socialData.map((item) => (
             <Li key={item.id}>
-              <Img alt={item.name} src={item.icon}></Img>
+              <LittleIcon
+                src={item.icon}
+                alt={item.name}
+                width="none"
+                height="small"
+                marginLeft="small"
+                maxWidth="regular"
+              />
+              {/* <Img alt={item.name} src={item.icon}></Img> */}
             </Li>
           ))}
         </Social>
