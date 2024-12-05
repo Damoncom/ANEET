@@ -8,7 +8,6 @@ import searchIcon from "../header/icon/social/search.jpg";
 import { Input } from "./style";
 
 const Header: React.FC = () => {
-  console.log("socialData", socialData);
   return (
     <div>
       <Content

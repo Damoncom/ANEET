@@ -42,7 +42,7 @@ const heightValues = {
 };
 
 const borderValues = {
-  none: "none",
+  none: "1px solid #ffffff0",
   red: "1px solid #B6004C",
 };
 
