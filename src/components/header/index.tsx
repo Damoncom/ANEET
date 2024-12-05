@@ -36,7 +36,6 @@ const Header: React.FC = () => {
                   alt={item.name}
                   width="none"
                   height="small"
-                  marginLeft="small"
                   maxWidth="regular"
                 />
               </Li>
@@ -44,7 +43,12 @@ const Header: React.FC = () => {
           </Social>
           <Button>
             {/* TODO:添加query,使得alt是照片本来的名字 */}
-            <LittleIcon src={searchIcon} alt="search" width="medium" />
+            <LittleIcon
+              src={searchIcon}
+              alt="search"
+              width="medium"
+              marginLeft="medium"
+            />
             <Input placeholder="Buscar" />
           </Button>
         </div>

@@ -1,4 +1,5 @@
 import { Content } from "../utils/style";
+import { IconBox } from "./style";
 import Button from "../button/index";
 import LittleIcon from "../littleIcon";
 import TextBox from "../textBox";
@@ -15,7 +16,9 @@ const Navigation: React.FC = () => {
         borderRadius="medium"
         margin="0 10px"
       >
-        <LittleIcon src={homeIcon} alt="home" />
+        <IconBox>
+          <LittleIcon src={homeIcon} alt="home" />
+        </IconBox>
         <TextBox>Home</TextBox>
       </Button>
       <Button
@@ -24,7 +27,10 @@ const Navigation: React.FC = () => {
         borderRadius="medium"
         margin="0 10px"
       >
-        <LittleIcon src={miespacioIcon} alt="miespacio" />
+        <IconBox>
+          <LittleIcon src={miespacioIcon} alt="miespacio" />
+        </IconBox>
+
         <TextBox>Mi Espacio</TextBox>
       </Button>
       <Button
@@ -33,7 +39,10 @@ const Navigation: React.FC = () => {
         borderRadius="medium"
         margin="0 10px"
       >
-        <LittleIcon src={herramientasIcon} alt="hoherramientasme" />
+        <IconBox>
+          <LittleIcon src={herramientasIcon} alt="hoherramientasme" />
+        </IconBox>
+
         <TextBox>Herramientas</TextBox>
       </Button>
     </Content>

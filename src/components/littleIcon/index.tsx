@@ -39,7 +39,7 @@ const LittleIcon: React.FC<LittleIconProps> = ({
   alt = "image",
   width = "small",
   height = "small",
-  marginLeft = "medium",
+  marginLeft = "small",
   maxWidth = "none",
 }) => {
   return (
