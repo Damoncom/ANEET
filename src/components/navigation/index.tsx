@@ -1,4 +1,4 @@
-import { Content } from "../utils/style";
+import { HorizontalContent } from "../utils";
 import { IconBox } from "./style";
 import Button from "../button/index";
 import LittleIcon from "../littleIcon";
@@ -23,7 +23,7 @@ const Navigation: React.FC = () => {
   // console.log("currentPath:", currentPath);
 
   return (
-    <Content>
+    <HorizontalContent>
       <Link to="/">
         {!isHomePage && (
           <Button width="medium" height="large" margin="0 10px" border="none">
@@ -79,7 +79,7 @@ const Navigation: React.FC = () => {
           </Button>
         )}
       </Link>
-    </Content>
+    </HorizontalContent>
   );
 };
 

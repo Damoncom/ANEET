@@ -1,5 +1,5 @@
 import { Logo, Social, Li } from "./style";
-import { Content } from "../utils/style";
+import { HorizontalContent } from "../utils";
 import { StaticImage } from "gatsby-plugin-image";
 import { socialData } from "./data";
 import Button from "../button/index";
@@ -10,9 +10,7 @@ import { Input } from "./style";
 const Header: React.FC = () => {
   return (
     <div>
-      <Content
-        style={{ backgroundColor: "white", justifyContent: "space-around" }}
-      >
+      <HorizontalContent backgroundColor="white" justifyContent="spaceAround">
         <Logo>
           <StaticImage
             alt="logo"
@@ -51,7 +49,7 @@ const Header: React.FC = () => {
             <Input placeholder="Buscar" />
           </Button>
         </div>
-      </Content>
+      </HorizontalContent>
     </div>
   );
 };
