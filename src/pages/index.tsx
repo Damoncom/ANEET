@@ -1,18 +1,12 @@
 import * as React from "react";
 import Header from "../components/header/index";
+import Navigation from "../components/navigation";
 // import Footer from "../components/footer";
 
 const Home: React.FC = () => (
-  // <div>
-  //   <Header />
-  //   <main>
-  //     <h1>Home</h1>
-  //     {/* 其他内容 */}
-  //   </main>
-  //   <Footer />
-  // </div>
   <div>
     <Header />
+    <Navigation />
   </div>
 );
 

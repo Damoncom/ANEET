@@ -1,11 +1,11 @@
-import { Content, Logo, Social, Li } from "./style";
+import { Logo, Social, Li } from "./style";
+import { Content } from "../utils/style";
 import { StaticImage } from "gatsby-plugin-image";
 import { socialData } from "./data";
 import Button from "../button/index";
 import LittleIcon from "../littleIcon";
 import searchIcon from "../header/icon/social/search.jpg";
 import { Input } from "./style";
-import TextBox from "../textBox";
 
 const Header: React.FC = () => {
   console.log("socialData", socialData);
@@ -38,34 +38,6 @@ const Header: React.FC = () => {
           <LittleIcon src={searchIcon} alt="search" width="medium" />
           <Input placeholder="Buscar" />
         </Button>
-      </Content>
-      <Content>
-        <Button width="medium" height="large" borderRadius="medium">
-          <LittleIcon src={searchIcon} alt="search" width="medium" />
-          <div
-            style={{
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          ></div>
-          {/* <TextBox>Home</TextBox> */}
-        </Button>
-        <Button
-          width="medium"
-          height="large"
-          borderRadius="medium"
-          children="Mi Espacio"
-        />
-        <Button
-          width="medium"
-          height="large"
-          borderRadius="medium"
-          children="Herramientas"
-        />
       </Content>
     </div>
   );

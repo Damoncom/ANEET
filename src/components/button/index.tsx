@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledButton } from "./style";
+
 // 定义 ButtonProps 接口
 interface ButtonProps {
   borderRadius?: "small" | "medium" | "large";
@@ -77,6 +78,8 @@ const Button: React.FC<ButtonProps> = ({
       fontSize={fontSizeValues[fontSize]}
       onClick={onClick}
     >
+      {/* TODO:报错：“children”被指定了两次。将覆盖名为“children”的特性。ts(2710) */}
+      {/* {children && <TextBox>{children}</TextBox>} */}
       {children && children}
       {/* 仅在children存在时才渲染 */}
     </StyledButton>
