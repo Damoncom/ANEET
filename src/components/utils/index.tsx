@@ -4,7 +4,7 @@ import { HorizontalBox, VerticalBox } from "./style";
 interface HorizontalContentProps {
   width?: "small" | "medium" | "large" | "xLarge" | "whole";
   height?: "xxSmall" | "xSmall" | "small" | "medium" | "large";
-  backgroundColor?: "default" | "white";
+  backgroundColor?: "default" | "white" | "red";
   justifyContent?: "center" | "spaceAround";
   children?: React.ReactNode;
 }
@@ -34,6 +34,7 @@ const heightValues = {
 const backgroundColorValues = {
   default: "#f6f7fb",
   white: "#ffffff",
+  red: "#7D0641",
 };
 
 const justifyContentValues = {
