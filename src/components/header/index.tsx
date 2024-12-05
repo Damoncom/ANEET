@@ -1,4 +1,4 @@
-import { Logo, Social, Li } from "./style";
+import { PinToTop, Logo, Social, Li } from "./style";
 import { HorizontalContent } from "../utils";
 import { StaticImage } from "gatsby-plugin-image";
 import { socialData } from "./data";
@@ -9,7 +9,7 @@ import { Input } from "./style";
 
 const Header: React.FC = () => {
   return (
-    <div>
+    <PinToTop>
       <HorizontalContent backgroundColor="white" justifyContent="spaceAround">
         <Logo>
           <StaticImage
@@ -50,7 +50,7 @@ const Header: React.FC = () => {
           </Button>
         </div>
       </HorizontalContent>
-    </div>
+    </PinToTop>
   );
 };
 

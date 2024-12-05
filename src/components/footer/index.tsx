@@ -1,11 +1,14 @@
 import { HorizontalContent } from "../utils";
+import { PinToBottom } from "./style";
 
 const Footer: React.FC = () => {
   return (
-    <HorizontalContent
-      height="xxSmall"
-      backgroundColor="red"
-    ></HorizontalContent>
+    <PinToBottom>
+      <HorizontalContent
+        height="xxSmall"
+        backgroundColor="red"
+      ></HorizontalContent>
+    </PinToBottom>
   );
 };
 

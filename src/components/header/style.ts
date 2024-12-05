@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const PinToTop = styled.div`
+  width: 100%;
+  height: 90px;
+  position: sticky;
+  top: 0;
+`;
+
 export const Logo = styled.div`
   width: 201px;
   height: 60px;
