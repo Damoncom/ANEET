@@ -12,6 +12,7 @@ interface ButtonProps {
   fontSize?: "small" | "medium" | "large";
   onClick?: () => void;
   children?: React.ReactNode; // ?:把属性标记为可选
+  margin?: string;
 }
 
 // 定义预设值
@@ -66,6 +67,7 @@ const Button: React.FC<ButtonProps> = ({
   fontSize = "small",
   onClick,
   children,
+  margin = "0px",
 }) => {
   return (
     <StyledButton
@@ -76,6 +78,7 @@ const Button: React.FC<ButtonProps> = ({
       border={borderValues[border]}
       color={colorValues[color]}
       fontSize={fontSizeValues[fontSize]}
+      margin={margin}
       onClick={onClick}
     >
       {/* TODO:报错：“children”被指定了两次。将覆盖名为“children”的特性。ts(2710) */}

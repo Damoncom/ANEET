@@ -7,6 +7,7 @@ interface StyledButtonProps {
   border: string;
   color: string;
   fontSize: string;
+  margin: string;
 }
 
 export const StyledButton = styled.div<StyledButtonProps>`
@@ -17,7 +18,7 @@ export const StyledButton = styled.div<StyledButtonProps>`
   border: ${(props) => props.border};
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize};
-  margin: 0 10px;
+  margin: ${(props) => props.margin};
   cursor: pointer;
   display: flex;
   align-items: center;

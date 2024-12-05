@@ -11,33 +11,43 @@ const Header: React.FC = () => {
   console.log("socialData", socialData);
   return (
     <div>
-      <Content style={{ backgroundColor: "white" }}>
+      <Content
+        style={{ backgroundColor: "white", justifyContent: "space-around" }}
+      >
         <Logo>
           <StaticImage
             alt="logo"
             src="./icon/logo.jpg"
-            style={{ objectFit: "cover" }}
+            style={{
+              objectFit: "cover",
+              width: "201px",
+              height: "60px;",
+            }}
           />
         </Logo>
-        <Social>
-          {socialData.map((item) => (
-            <Li key={item.id}>
-              <LittleIcon
-                src={item.icon}
-                alt={item.name}
-                width="none"
-                height="small"
-                marginLeft="small"
-                maxWidth="regular"
-              />
-            </Li>
-          ))}
-        </Social>
-        <Button>
-          {/* TODO:添加query,使得alt是照片本来的名字 */}
-          <LittleIcon src={searchIcon} alt="search" width="medium" />
-          <Input placeholder="Buscar" />
-        </Button>
+        <div
+          style={{ display: "flex", alignItems: "center", marginRight: "5%" }}
+        >
+          <Social>
+            {socialData.map((item) => (
+              <Li key={item.id}>
+                <LittleIcon
+                  src={item.icon}
+                  alt={item.name}
+                  width="none"
+                  height="small"
+                  marginLeft="small"
+                  maxWidth="regular"
+                />
+              </Li>
+            ))}
+          </Social>
+          <Button>
+            {/* TODO:添加query,使得alt是照片本来的名字 */}
+            <LittleIcon src={searchIcon} alt="search" width="medium" />
+            <Input placeholder="Buscar" />
+          </Button>
+        </div>
       </Content>
     </div>
   );

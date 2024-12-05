@@ -4,13 +4,13 @@ export const Logo = styled.div`
   width: 201px;
   height: 60px;
   cursor: pointer;
+  margin: 0 auto 0 10%;
 `;
 
 export const Social = styled.ul`
   min-width: 208px;
   width: 13%;
   padding: 10px;
-  margin: 0 0 0 50%;
   white-space: nowrap;
 `;
 

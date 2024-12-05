@@ -9,15 +9,30 @@ import herramientasIcon from "./icon/herramientas.jpg";
 const Navigation: React.FC = () => {
   return (
     <Content>
-      <Button width="medium" height="large" borderRadius="medium">
+      <Button
+        width="medium"
+        height="large"
+        borderRadius="medium"
+        margin="0 10px"
+      >
         <LittleIcon src={homeIcon} alt="home" />
         <TextBox>Home</TextBox>
       </Button>
-      <Button width="medium" height="large" borderRadius="medium">
+      <Button
+        width="medium"
+        height="large"
+        borderRadius="medium"
+        margin="0 10px"
+      >
         <LittleIcon src={miespacioIcon} alt="miespacio" />
         <TextBox>Mi Espacio</TextBox>
       </Button>
-      <Button width="medium" height="large" borderRadius="medium">
+      <Button
+        width="medium"
+        height="large"
+        borderRadius="medium"
+        margin="0 10px"
+      >
         <LittleIcon src={herramientasIcon} alt="hoherramientasme" />
         <TextBox>Herramientas</TextBox>
       </Button>
