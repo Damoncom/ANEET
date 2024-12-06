@@ -8,6 +8,7 @@ interface StyledButtonProps {
   color: string;
   fontSize: string;
   margin: string;
+  letterSpacing: string;
 }
 
 export const StyledButton = styled.div<StyledButtonProps>`
@@ -19,6 +20,7 @@ export const StyledButton = styled.div<StyledButtonProps>`
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize};
   margin: ${(props) => props.margin};
+  letter-spacing: ${(props) => props.letterSpacing};
   cursor: pointer;
   display: flex;
   align-items: center;

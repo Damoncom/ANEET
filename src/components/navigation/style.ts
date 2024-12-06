@@ -10,3 +10,10 @@ export const IconBox = styled.div`
   justify-content: center;
   margin-left: 8px;
 `;
+
+export const PinToTop = styled.div`
+  width: 100%;
+  height: 90px;
+  position: sticky;
+  top: 90px;
+`;

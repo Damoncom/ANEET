@@ -1,5 +1,5 @@
 import { HorizontalContent } from "../utils";
-import { IconBox } from "./style";
+import { IconBox, PinToTop } from "./style";
 import Button from "../button/index";
 import LittleIcon from "../littleIcon";
 import TextBox from "../textBox";
@@ -23,63 +23,65 @@ const Navigation: React.FC = () => {
   // console.log("currentPath:", currentPath);
 
   return (
-    <HorizontalContent>
-      <Link to="/">
-        {!isHomePage && (
-          <Button width="medium" height="large" margin="0 10px" border="none">
-            <IconBox>
-              <LittleIcon src={homeIcon} alt="home" />
-            </IconBox>
-            <TextBox>Home</TextBox>
-          </Button>
-        )}
+    <PinToTop>
+      <HorizontalContent>
+        <Link to="/">
+          {!isHomePage && (
+            <Button width="medium" height="large" margin="0 10px" border="none">
+              <IconBox>
+                <LittleIcon src={homeIcon} alt="home" />
+              </IconBox>
+              <TextBox>Home</TextBox>
+            </Button>
+          )}
 
-        {isHomePage && (
-          <Button width="medium" height="large" margin="0 10px">
-            <IconBox>
-              <LittleIcon src={homeIcon} alt="home" />
-            </IconBox>
-            <TextBox>Home</TextBox>
-          </Button>
-        )}
-      </Link>
-      <Link to="/mi-espacio">
-        {!isMiEspacioPage && (
-          <Button width="medium" height="large" margin="0 10px" border="none">
-            <IconBox>
-              <LittleIcon src={miespacioIcon} alt="miespacio" />
-            </IconBox>
-            <TextBox>Mi Espacio</TextBox>
-          </Button>
-        )}
-        {isMiEspacioPage && (
-          <Button width="medium" height="large" margin="0 10px">
-            <IconBox>
-              <LittleIcon src={miespacioIcon} alt="miespacio" />
-            </IconBox>
-            <TextBox>Mi Espacio</TextBox>
-          </Button>
-        )}
-      </Link>
-      <Link to="/herramientas">
-        {!isHerramientasPage && (
-          <Button width="medium" height="large" margin="0 10px" border="none">
-            <IconBox>
-              <LittleIcon src={herramientasIcon} alt="hoherramientasme" />
-            </IconBox>
-            <TextBox>Herramientas</TextBox>
-          </Button>
-        )}
-        {isHerramientasPage && (
-          <Button width="medium" height="large" margin="0 10px">
-            <IconBox>
-              <LittleIcon src={herramientasIcon} alt="hoherramientasme" />
-            </IconBox>
-            <TextBox>Herramientas</TextBox>
-          </Button>
-        )}
-      </Link>
-    </HorizontalContent>
+          {isHomePage && (
+            <Button width="medium" height="large" margin="0 10px">
+              <IconBox>
+                <LittleIcon src={homeIcon} alt="home" />
+              </IconBox>
+              <TextBox>Home</TextBox>
+            </Button>
+          )}
+        </Link>
+        <Link to="/mi-espacio">
+          {!isMiEspacioPage && (
+            <Button width="medium" height="large" margin="0 10px" border="none">
+              <IconBox>
+                <LittleIcon src={miespacioIcon} alt="miespacio" />
+              </IconBox>
+              <TextBox>Mi Espacio</TextBox>
+            </Button>
+          )}
+          {isMiEspacioPage && (
+            <Button width="medium" height="large" margin="0 10px">
+              <IconBox>
+                <LittleIcon src={miespacioIcon} alt="miespacio" />
+              </IconBox>
+              <TextBox>Mi Espacio</TextBox>
+            </Button>
+          )}
+        </Link>
+        <Link to="/herramientas">
+          {!isHerramientasPage && (
+            <Button width="medium" height="large" margin="0 10px" border="none">
+              <IconBox>
+                <LittleIcon src={herramientasIcon} alt="hoherramientasme" />
+              </IconBox>
+              <TextBox>Herramientas</TextBox>
+            </Button>
+          )}
+          {isHerramientasPage && (
+            <Button width="medium" height="large" margin="0 10px">
+              <IconBox>
+                <LittleIcon src={herramientasIcon} alt="hoherramientasme" />
+              </IconBox>
+              <TextBox>Herramientas</TextBox>
+            </Button>
+          )}
+        </Link>
+      </HorizontalContent>
+    </PinToTop>
   );
 };
 

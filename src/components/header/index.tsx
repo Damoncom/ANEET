@@ -10,7 +10,7 @@ import { Input } from "./style";
 const Header: React.FC = () => {
   return (
     <PinToTop>
-      <HorizontalContent backgroundColor="white" justifyContent="spaceAround">
+      <HorizontalContent backgroundColor="white" justifyContent="spaceBetween">
         <Logo>
           <StaticImage
             alt="logo"
