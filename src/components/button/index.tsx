@@ -3,8 +3,8 @@ import { StyledButton } from "./style";
 
 // 定义 ButtonProps 接口
 interface ButtonProps {
-  borderRadius?: "small" | "medium" | "large";
-  backgroundColor?: "white" | "red";
+  borderRadius?: "none" | "small" | "medium" | "large";
+  backgroundColor?: "white" | "pink" | "red" | "purple";
   height?: "small" | "medium" | "large" | "xLarge";
   width?: "small" | "medium" | "large" | "xLarge";
   border?: "none" | "red";
@@ -17,6 +17,7 @@ interface ButtonProps {
 
 // 定义预设值
 const borderRadiusValues = {
+  none: "0px",
   small: "4px",
   medium: "40px",
   large: "50px",
@@ -24,7 +25,9 @@ const borderRadiusValues = {
 
 const backgroundColorValues = {
   white: "#ffffff",
+  pink: "#DF396B",
   red: "#B6004C",
+  purple: "#7D0641",
 };
 
 const widthValues = {
@@ -43,6 +46,7 @@ const heightValues = {
 
 const borderValues = {
   none: "1px solid #ffffff0",
+
   red: "1px solid #B6004C",
 };
 

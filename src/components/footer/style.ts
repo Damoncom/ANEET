@@ -6,3 +6,7 @@ export const PinToBottom = styled.div`
   position: fixed;
   bottom: 0;
 `;
+
+export const LeftBorder = styled.div`
+  border-left: 1px solid #ffffff3f;
+`;
