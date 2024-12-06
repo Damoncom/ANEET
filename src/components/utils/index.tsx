@@ -19,10 +19,11 @@ interface VerticalContentProps {
     | "whole"
     | "quarter"
     | "half";
-  height?: "xxSmall" | "xSmall" | "small" | "medium" | "large";
+  height?: "xxSmall" | "xSmall" | "midSmall" | "small" | "medium" | "large";
   backgroundColor?: "default" | "white";
   margin?: string;
   children?: React.ReactNode;
+  position?: string;
 }
 
 const widthValues = {
@@ -80,8 +81,9 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
   width = "medium",
   height = "large",
   backgroundColor = "default",
-  margin = "0 3%",
+  margin = "0px",
   children,
+  position = "",
 }) => {
   return (
     <VerticalBox
@@ -89,6 +91,7 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
       height={heightValues[height]}
       backgroundColor={backgroundColorValues[backgroundColor]}
       margin={margin}
+      position={position}
     >
       {children && children}
     </VerticalBox>

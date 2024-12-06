@@ -6,7 +6,7 @@ interface ButtonProps {
   borderRadius?: "none" | "small" | "medium" | "large";
   backgroundColor?: "white" | "pink" | "red" | "purple";
   height?: "small" | "medium" | "large" | "xLarge";
-  width?: "small" | "medium" | "large" | "xLarge";
+  width?: "small" | "medium" | "large" | "xLarge" | "whole";
   border?: "none" | "red";
   color?: "white" | "red";
   fontSize?: "small" | "medium" | "large";
@@ -36,6 +36,7 @@ const widthValues = {
   medium: "186px",
   large: "200px",
   xLarge: "290px",
+  whole: "100%",
 };
 
 const heightValues = {

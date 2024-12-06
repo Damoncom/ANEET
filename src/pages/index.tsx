@@ -5,7 +5,8 @@ import Footer from "../components/footer";
 import { HorizontalContent, VerticalContent, BGImg } from "../components/utils";
 import Button from "../components/button";
 import TextBox from "../components/textBox";
-// import homeBannerIcon from "../components/icon/home-banner.png";
+import homeBannerIcon from "../components/icon/home-banner.png";
+import { PinToBottom } from "../components/utils/style";
 
 const Home: React.FC = () => {
   console.log("BGImg:", BGImg);
@@ -15,7 +16,7 @@ const Home: React.FC = () => {
       <Navigation />
       <HorizontalContent height="large" justifyContent="spaceBetween">
         {/* 左侧 */}
-        <VerticalContent width="quarter">
+        <VerticalContent width="quarter" margin="0 3%">
           <HorizontalContent height="xxSmall" justifyContent="spaceBetween">
             <Button
               width="small"
@@ -45,15 +46,26 @@ const Home: React.FC = () => {
           <HorizontalContent height="xxSmall"></HorizontalContent>
         </VerticalContent>
         {/* 中间 */}
-        <VerticalContent width="half">
-          <HorizontalContent height="midSmall">
-            {/* <BGImg src={homeBannerIcon} alt="home-banner"></BGImg> */}
-            <BGImg src="" alt="home-banner"></BGImg>
-          </HorizontalContent>
+        <VerticalContent width="half" margin="0 3%">
+          <VerticalContent width="whole" height="midSmall" position="relative">
+            <BGImg src={homeBannerIcon} alt="home-banner" />
+            <PinToBottom>
+              <Button
+                width="whole"
+                height="medium"
+                borderRadius="none"
+                backgroundColor="red"
+                color="white"
+              >
+                <TextBox>LÍNEA EDITORIAL</TextBox>
+                <TextBox>Temas que se quieren posicionar</TextBox>
+              </Button>
+            </PinToBottom>
+          </VerticalContent>
           <HorizontalContent height="small"></HorizontalContent>
         </VerticalContent>
         {/* 右侧 */}
-        <VerticalContent width="quarter"></VerticalContent>
+        <VerticalContent width="quarter" margin="0 3%"></VerticalContent>
       </HorizontalContent>
       <Footer />
     </div>

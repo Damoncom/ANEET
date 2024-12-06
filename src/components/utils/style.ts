@@ -23,12 +23,14 @@ interface VerticalBoxProps {
   width: string;
   backgroundColor: string;
   margin: string;
+  position: string;
 }
 export const VerticalBox = styled.div<VerticalBoxProps>`
   height: ${(props) => props.height};
   width: ${(props) => props.width};
   background-color: ${(props) => props.backgroundColor};
   margin: ${(props) => props.margin};
+  position: ${(props) => props.position};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,4 +42,14 @@ export const ImgBox = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+`;
+
+// 固定在底部
+export const PinToBottom = styled.div`
+  width: 100%;
+  /* height: 100%; */
+  height: 40px;
+  position: absolute;
+  bottom: 0;
 `;
