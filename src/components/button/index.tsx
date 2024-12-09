@@ -4,12 +4,12 @@ import { StyledButton } from "./style";
 // 定义 ButtonProps 接口
 interface ButtonProps {
   borderRadius?: "none" | "small" | "medium" | "large";
-  backgroundColor?: "white" | "pink" | "red" | "purple";
-  height?: "small" | "medium" | "large" | "xLarge";
-  width?: "small" | "medium" | "large" | "xLarge" | "whole";
+  backgroundColor?: "none" | "white" | "pink" | "red" | "purple";
+  height?: "small" | "medium" | "large" | "xLarge" | "xxLarge";
+  width?: "small" | "medium" | "large" | "xLarge" | "whole" | "third";
   border?: "none" | "red";
   color?: "white" | "red";
-  fontSize?: "small" | "medium" | "large";
+  fontSize?: "small" | "medium" | "xMedium" | "large";
   onClick?: () => void;
   children?: React.ReactNode; // ?:把属性标记为可选
   margin?: string;
@@ -25,6 +25,7 @@ const borderRadiusValues = {
 };
 
 const backgroundColorValues = {
+  none: "none",
   white: "#ffffff",
   pink: "#DF396B",
   red: "#B6004C",
@@ -37,6 +38,7 @@ const widthValues = {
   large: "200px",
   xLarge: "290px",
   whole: "100%",
+  third: "30%",
 };
 
 const heightValues = {
@@ -44,6 +46,7 @@ const heightValues = {
   medium: "40px",
   large: "48px",
   xLarge: "56px",
+  xxLarge: "112px",
 };
 
 const borderValues = {
@@ -59,6 +62,7 @@ const colorValues = {
 const fontSizeValues = {
   small: "14px",
   medium: "16px",
+  xMedium: "18px",
   large: "32px",
 };
 

@@ -5,11 +5,11 @@ import Footer from "../components/footer";
 import { HorizontalContent, VerticalContent, BGImg } from "../components/utils";
 import Button from "../components/button";
 import TextBox from "../components/textBox";
-import homeBannerIcon from "../components/icon/home-banner.png";
-import { PinToBottom } from "../components/utils/style";
+import { bannerData, plateData } from "../components/data/homeData";
+import { Mask, PinToBottom } from "../components/utils/style";
 
 const Home: React.FC = () => {
-  console.log("BGImg:", BGImg);
+  console.log("bannerData:", bannerData);
   return (
     <div>
       <Header />
@@ -45,10 +45,11 @@ const Home: React.FC = () => {
           <HorizontalContent height="xxSmall"></HorizontalContent>
           <HorizontalContent height="xxSmall"></HorizontalContent>
         </VerticalContent>
+
         {/* 中间 */}
         <VerticalContent width="half" margin="0 3%">
           <VerticalContent width="whole" height="midSmall" position="relative">
-            <BGImg src={homeBannerIcon} alt="home-banner" />
+            <BGImg src={bannerData.icon} alt="home-banner" />
             <PinToBottom>
               <Button
                 width="whole"
@@ -57,13 +58,35 @@ const Home: React.FC = () => {
                 backgroundColor="red"
                 color="white"
               >
-                <TextBox>LÍNEA EDITORIAL</TextBox>
-                <TextBox>Temas que se quieren posicionar</TextBox>
+                <b style={{ margin: "0 5px 0 10px" }}>{bannerData.title}</b>
+                {bannerData.description}
               </Button>
             </PinToBottom>
           </VerticalContent>
-          <HorizontalContent height="small"></HorizontalContent>
+          <HorizontalContent
+            height="small"
+            justifyContent="spaceBetween"
+            flexWrap="wrap"
+          >
+            {plateData.map((item) => (
+              <Button
+                width="third"
+                height="xxLarge"
+                borderRadius="small"
+                backgroundColor="none"
+                border="none"
+                color="white"
+                fontSize="xMedium"
+                key={item.id}
+              >
+                <BGImg src={item.icon} alt={item.name}></BGImg>
+                <Mask></Mask>
+                <TextBox>{item.name}</TextBox>
+              </Button>
+            ))}
+          </HorizontalContent>
         </VerticalContent>
+
         {/* 右侧 */}
         <VerticalContent width="quarter" margin="0 3%"></VerticalContent>
       </HorizontalContent>

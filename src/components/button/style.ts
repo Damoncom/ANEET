@@ -25,7 +25,7 @@ export const StyledButton = styled.div<StyledButtonProps>`
   display: flex;
   align-items: center;
   position: relative;
-
+  overflow: hidden;
   &:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
