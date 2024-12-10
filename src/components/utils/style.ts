@@ -47,12 +47,12 @@ export const ImgBox = styled.img`
   object-fit: cover;
   position: absolute;
   margin: 0;
-  transition: transform 1s ease;
+  transition: transform 2s ease;
   &:hover {
-    transform: scale(2);
+    transform: scale(1.5);
   }
 `;
-// TODO:蒙层层级问题
+
 // 固定在底部
 export const PinToBottom = styled.div`
   width: 100%;
@@ -61,7 +61,7 @@ export const PinToBottom = styled.div`
   position: absolute;
   bottom: 0;
 `;
-
+// TODO:蒙层层级问题
 // 蒙版
 export const Mask = styled.div`
   width: 100%;

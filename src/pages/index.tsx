@@ -80,7 +80,7 @@ const Home: React.FC = () => {
                 key={item.id}
               >
                 <BGImg src={item.icon} alt={item.name}></BGImg>
-                <Mask></Mask>
+                <Mask />
                 <TextBox>{item.name}</TextBox>
               </Button>
             ))}
