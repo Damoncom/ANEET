@@ -8,6 +8,7 @@ interface HorizontalContentProps {
   justifyContent?: "center" | "spaceBetween";
   children?: React.ReactNode;
   flexWrap?: "nowrap" | "wrap";
+  position?: string;
 }
 
 interface VerticalContentProps {
@@ -71,6 +72,7 @@ export const HorizontalContent: React.FC<HorizontalContentProps> = ({
   justifyContent = "center",
   children,
   flexWrap = "nowrap",
+  position = "",
 }) => {
   return (
     <HorizontalBox
@@ -79,6 +81,7 @@ export const HorizontalContent: React.FC<HorizontalContentProps> = ({
       backgroundColor={backgroundColorValues[backgroundColor]}
       justifyContent={justifyContentValues[justifyContent]}
       flexWrap={flexWrapValues[flexWrap]}
+      position={position}
     >
       {children && children}
     </HorizontalBox>

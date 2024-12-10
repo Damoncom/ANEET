@@ -7,6 +7,7 @@ interface HorizontalBoxProps {
   backgroundColor: string;
   justifyContent: string;
   flexWrap: string;
+  position: string;
 }
 
 export const HorizontalBox = styled.div<HorizontalBoxProps>`
@@ -17,6 +18,8 @@ export const HorizontalBox = styled.div<HorizontalBoxProps>`
   align-items: center;
   justify-content: ${(props) => props.justifyContent};
   flex-wrap: ${(props) => props.flexWrap};
+  overflow: hidden;
+  position: ${(props) => props.position};
 `;
 
 // 纵向盒子
@@ -61,7 +64,8 @@ export const PinToBottom = styled.div`
   position: absolute;
   bottom: 0;
 `;
-// TODO:蒙层层级问题
+
+// TODO:加一个判断：是否有缩放效果
 // 蒙版
 export const Mask = styled.div`
   width: 100%;

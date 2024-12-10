@@ -14,7 +14,11 @@ const Home: React.FC = () => {
     <div>
       <Header />
       <Navigation />
-      <HorizontalContent height="large" justifyContent="spaceBetween">
+      <HorizontalContent
+        height="large"
+        justifyContent="spaceBetween"
+        position="fixed"
+      >
         {/* 左侧 */}
         <VerticalContent width="quarter" margin="0 3%">
           <HorizontalContent height="xxSmall" justifyContent="spaceBetween">
