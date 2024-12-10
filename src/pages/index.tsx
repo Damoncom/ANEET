@@ -92,11 +92,50 @@ const Home: React.FC = () => {
         </VerticalContent>
 
         {/* 右侧 */}
-        <VerticalContent
-          width="quarter"
-          margin="0 3%"
-          minWidth="small"
-        ></VerticalContent>
+        <VerticalContent width="quarter" margin="0 3%" minWidth="small">
+          <HorizontalContent
+            height="minXSmall"
+            backgroundColor="white"
+            borderBottom="1px solid #E6ECF0"
+          >
+            <Button
+              width="realThird"
+              height="minLarge"
+              border="none"
+              borderRadius="none"
+              fontWeight="medium"
+            >
+              <TextBox>Twitter</TextBox>
+            </Button>
+            <Button
+              width="realThird"
+              height="minLarge"
+              border="none"
+              borderRadius="none"
+              fontWeight="medium"
+            >
+              <TextBox>+Visto</TextBox>
+            </Button>
+            <Button
+              width="realThird"
+              height="minLarge"
+              border="none"
+              borderRadius="none"
+              fontWeight="medium"
+            >
+              <TextBox>Medios</TextBox>
+            </Button>
+          </HorizontalContent>
+          <VerticalContent
+            width="whole"
+            height="minMedium"
+            backgroundColor="white"
+          ></VerticalContent>
+          <HorizontalContent
+            height="minXSmall"
+            backgroundColor="white"
+          ></HorizontalContent>
+        </VerticalContent>
       </HorizontalContent>
       <Footer />
     </div>

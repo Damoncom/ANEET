@@ -5,8 +5,15 @@ import { StyledButton } from "./style";
 interface ButtonProps {
   borderRadius?: "none" | "small" | "medium" | "large";
   backgroundColor?: "none" | "white" | "pink" | "red" | "purple";
-  height?: "small" | "medium" | "large" | "xLarge" | "xxLarge";
-  width?: "small" | "medium" | "large" | "xLarge" | "whole" | "third";
+  height?: "small" | "medium" | "large" | "minLarge" | "xLarge" | "xxLarge";
+  width?:
+    | "small"
+    | "medium"
+    | "large"
+    | "xLarge"
+    | "whole"
+    | "third"
+    | "realThird";
   border?: "none" | "red";
   color?: "white" | "red";
   fontSize?: "small" | "medium" | "xMedium" | "large";
@@ -14,6 +21,7 @@ interface ButtonProps {
   children?: React.ReactNode; // ?:把属性标记为可选
   margin?: string;
   letterSpacing?: string;
+  fontWeight?: "none" | "medium";
 }
 
 // 定义预设值
@@ -39,12 +47,14 @@ const widthValues = {
   xLarge: "290px",
   whole: "100%",
   third: "30%",
+  realThird: "33.33%",
 };
 
 const heightValues = {
   small: "32px",
   medium: "40px",
   large: "48px",
+  minLarge: "55px",
   xLarge: "56px",
   xxLarge: "112px",
 };
@@ -66,6 +76,11 @@ const fontSizeValues = {
   large: "32px",
 };
 
+const fontWeightValues = {
+  none: "none",
+  medium: "700",
+};
+
 const Button: React.FC<ButtonProps> = ({
   borderRadius = "medium",
   backgroundColor = "white",
@@ -78,6 +93,7 @@ const Button: React.FC<ButtonProps> = ({
   children,
   margin = "0px",
   letterSpacing = "none",
+  fontWeight = "none",
 }) => {
   return (
     <StyledButton
@@ -90,6 +106,7 @@ const Button: React.FC<ButtonProps> = ({
       fontSize={fontSizeValues[fontSize]}
       margin={margin}
       letterSpacing={letterSpacing}
+      fontWeight={fontWeightValues[fontWeight]}
       onClick={onClick}
     >
       {/* TODO:报错：“children”被指定了两次。将覆盖名为“children”的特性。ts(2710) */}

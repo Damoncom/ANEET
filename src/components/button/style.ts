@@ -9,6 +9,7 @@ interface StyledButtonProps {
   fontSize: string;
   margin: string;
   letterSpacing: string;
+  fontWeight: string;
 }
 
 export const StyledButton = styled.div<StyledButtonProps>`
@@ -21,6 +22,7 @@ export const StyledButton = styled.div<StyledButtonProps>`
   font-size: ${(props) => props.fontSize};
   margin: ${(props) => props.margin};
   letter-spacing: ${(props) => props.letterSpacing};
+  font-weight: ${(props) => props.fontWeight};
   cursor: pointer;
   display: flex;
   align-items: center;

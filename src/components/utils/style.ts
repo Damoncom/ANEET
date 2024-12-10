@@ -8,6 +8,7 @@ interface HorizontalBoxProps {
   justifyContent: string;
   flexWrap: string;
   position: string;
+  borderBottom: string;
 }
 
 export const HorizontalBox = styled.div<HorizontalBoxProps>`
@@ -20,6 +21,7 @@ export const HorizontalBox = styled.div<HorizontalBoxProps>`
   flex-wrap: ${(props) => props.flexWrap};
   overflow: hidden;
   position: ${(props) => props.position};
+  border-bottom: ${(props) => props.borderBottom};
 `;
 
 // 纵向盒子
@@ -52,10 +54,10 @@ export const ImgBox = styled.img`
   object-fit: cover;
   position: absolute;
   margin: 0;
-  transition: transform 2s ease;
+  /* transition: transform 2s ease;
   &:hover {
     transform: scale(1.5);
-  }
+  } */
 `;
 
 // 固定在底部

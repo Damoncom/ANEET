@@ -9,77 +9,56 @@ import herramientasIcon from "./icon/herramientas.jpg";
 import { Link } from "gatsby";
 import { useLocation } from "@reach/router";
 
+// NavigationButton 组件：这是一个通用的导航按钮组件，它接收 to、icon、label 和 isActive 作为属性。
+// isActive 判断：根据 currentPath 判断当前页面是否为活动页面，并将结果传递给 NavigationButton
+
+const NavigationButton: React.FC<{
+  to: string;
+  icon: string;
+  label: string;
+  isActive: boolean;
+}> = ({ to, icon, label, isActive }) => (
+  <Link to={to}>
+    <Button
+      width="medium"
+      height="large"
+      margin="0 10px"
+      fontWeight="medium"
+      border={!isActive ? "none" : "red"}
+    >
+      <IconBox>
+        <LittleIcon src={icon} alt={label.toLowerCase()} />
+      </IconBox>
+      <TextBox>{label}</TextBox>
+    </Button>
+  </Link>
+);
+
 const Navigation: React.FC = () => {
   const location = useLocation();
-
-  // 获取当前路径
   const currentPath = location.pathname;
-
-  // 判断当前路径
-  const isHomePage = currentPath === "/";
-  const isMiEspacioPage = currentPath === "/mi-espacio/";
-  const isHerramientasPage = currentPath === "/herramientas/";
-
-  // console.log("currentPath:", currentPath);
 
   return (
     <PinToTop>
       <HorizontalContent>
-        <Link to="/">
-          {!isHomePage && (
-            <Button width="medium" height="large" margin="0 10px" border="none">
-              <IconBox>
-                <LittleIcon src={homeIcon} alt="home" />
-              </IconBox>
-              <TextBox>Home</TextBox>
-            </Button>
-          )}
-
-          {isHomePage && (
-            <Button width="medium" height="large" margin="0 10px">
-              <IconBox>
-                <LittleIcon src={homeIcon} alt="home" />
-              </IconBox>
-              <TextBox>Home</TextBox>
-            </Button>
-          )}
-        </Link>
-        <Link to="/mi-espacio">
-          {!isMiEspacioPage && (
-            <Button width="medium" height="large" margin="0 10px" border="none">
-              <IconBox>
-                <LittleIcon src={miespacioIcon} alt="miespacio" />
-              </IconBox>
-              <TextBox>Mi Espacio</TextBox>
-            </Button>
-          )}
-          {isMiEspacioPage && (
-            <Button width="medium" height="large" margin="0 10px">
-              <IconBox>
-                <LittleIcon src={miespacioIcon} alt="miespacio" />
-              </IconBox>
-              <TextBox>Mi Espacio</TextBox>
-            </Button>
-          )}
-        </Link>
-        <Link to="/herramientas">
-          {!isHerramientasPage && (
-            <Button width="medium" height="large" margin="0 10px" border="none">
-              <IconBox>
-                <LittleIcon src={herramientasIcon} alt="hoherramientasme" />
-              </IconBox>
-              <TextBox>Herramientas</TextBox>
-            </Button>
-          )}
-          {isHerramientasPage && (
-            <Button width="medium" height="large" margin="0 10px">
-              <IconBox>
-                <LittleIcon src={herramientasIcon} alt="hoherramientasme" />
-              </IconBox>
-              <TextBox>Herramientas</TextBox>
-            </Button>
-          )}
-        </Link>
+        <NavigationButton
+          to="/"
+          icon={homeIcon}
+          label="Home"
+          isActive={currentPath === "/"}
+        />
+        <NavigationButton
+          to="/mi-espacio"
+          icon={miespacioIcon}
+          label="Mi Espacio"
+          isActive={currentPath === "/mi-espacio/"}
+        />
+        <NavigationButton
+          to="/herramientas"
+          icon={herramientasIcon}
+          label="Herramientas"
+          isActive={currentPath === "/herramientas/"}
+        />
       </HorizontalContent>
     </PinToTop>
   );

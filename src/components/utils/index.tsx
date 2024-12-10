@@ -3,12 +3,20 @@ import { HorizontalBox, VerticalBox, ImgBox } from "./style";
 
 interface HorizontalContentProps {
   width?: "small" | "medium" | "large" | "xLarge" | "almost" | "whole";
-  height?: "xxSmall" | "xSmall" | "midSmall" | "small" | "medium" | "large";
+  height?:
+    | "xxSmall"
+    | "minXSmall"
+    | "xSmall"
+    | "midSmall"
+    | "small"
+    | "medium"
+    | "large";
   backgroundColor?: "default" | "white" | "red";
   justifyContent?: "center" | "spaceBetween";
   children?: React.ReactNode;
   flexWrap?: "nowrap" | "wrap";
   position?: string;
+  borderBottom?: string;
 }
 
 interface VerticalContentProps {
@@ -21,7 +29,14 @@ interface VerticalContentProps {
     | "whole"
     | "quarter"
     | "half";
-  height?: "xxSmall" | "xSmall" | "midSmall" | "small" | "medium" | "large";
+  height?:
+    | "xxSmall"
+    | "xSmall"
+    | "midSmall"
+    | "small"
+    | "medium"
+    | "minMedium"
+    | "large";
   backgroundColor?: "default" | "white";
   margin?: string;
   children?: React.ReactNode;
@@ -43,9 +58,11 @@ const widthValues = {
 
 const heightValues = {
   xxSmall: "40px",
+  minXSmall: "55px",
   xSmall: "90px",
   midSmall: "232px",
   small: "249px",
+  minMedium: "376px",
   medium: "366px",
   large: "486px",
 };
@@ -80,6 +97,7 @@ export const HorizontalContent: React.FC<HorizontalContentProps> = ({
   children,
   flexWrap = "nowrap",
   position = "",
+  borderBottom = "",
 }) => {
   return (
     <HorizontalBox
@@ -89,6 +107,7 @@ export const HorizontalContent: React.FC<HorizontalContentProps> = ({
       justifyContent={justifyContentValues[justifyContent]}
       flexWrap={flexWrapValues[flexWrap]}
       position={position}
+      borderBottom={borderBottom}
     >
       {children && children}
     </HorizontalBox>
