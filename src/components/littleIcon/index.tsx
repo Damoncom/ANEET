@@ -4,23 +4,27 @@ import { StyledImg } from "./style";
 interface LittleIconProps {
   src: string;
   alt?: string;
-  width?: "none" | "small" | "medium" | "large";
-  height?: "small" | "medium" | "large";
+  width?: "none" | "small" | "medium" | "midMedium" | "large" | "xLarge";
+  height?: "xSmall" | "small" | "medium" | "large";
   marginLeft?: "small" | "medium" | "large";
   maxWidth?: "none" | "regular";
+  boxShadow?: string;
 }
 
 const widthValues = {
   none: "none",
   small: "14px",
   medium: "15px",
+  midMedium: "17px",
   large: "20px",
+  xLarge: "44px",
 };
 
 const heightValues = {
+  xSmall: "12px",
   small: "14px",
   medium: "14px",
-  large: "14px",
+  large: "44px",
 };
 
 const marginLeftValues = {
@@ -41,6 +45,7 @@ const LittleIcon: React.FC<LittleIconProps> = ({
   height = "small",
   marginLeft = "small",
   maxWidth = "none",
+  boxShadow = "",
 }) => {
   return (
     <StyledImg
@@ -50,6 +55,7 @@ const LittleIcon: React.FC<LittleIconProps> = ({
       height={heightValues[height]}
       marginLeft={marginLeftValues[marginLeft]}
       maxWidth={maxWidthValues[maxWidth]}
+      boxShadow={boxShadow}
     />
   );
 };

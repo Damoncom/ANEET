@@ -5,7 +5,9 @@ import c3 from "../icon/home/plate/c3.png";
 import c4 from "../icon/home/plate/c4.png";
 import c5 from "../icon/home/plate/c5.png";
 import c6 from "../icon/home/plate/c6.png";
-
+import avatarIcon from "../icon/home/news/avatar.png";
+import newsIcon1 from "../icon/home/news/img1.png";
+import newsIcon2 from "../icon/home/news/img2.png";
 interface BannerData {
   title: string;
   description: string;
@@ -52,5 +54,56 @@ export const plateData: PlateData[] = [
     id: 6,
     name: "Servicios",
     icon: c6,
+  },
+];
+
+interface NewsData {
+  id: number;
+  title: string;
+  info: {
+    avatar: string;
+    name: string;
+    email: string;
+    text: string;
+    img1: string;
+    img2: string;
+  };
+}
+export const newsData: NewsData[] = [
+  {
+    id: 1,
+    title: "Twitter",
+    info: {
+      avatar: avatarIcon,
+      name: "DANE Colombia",
+      email: "@DANE_Colombia",
+      text: "El 78 % del tiempo que se destina a cuidados sin remuneración de personas al interior de los hogares proviene de las mujeres. En compañía de @ONUMujeresCol presentamos la infografía Cuidado no remunerado, la igualdad de género inicia en el hogar  https://bit.ly/2Ie8kLJ",
+      img1: newsIcon1,
+      img2: newsIcon2,
+    },
+  },
+  {
+    id: 2,
+    title: "+Visto",
+    info: {
+      avatar: avatarIcon,
+      name: "Damon Salvatore",
+      email: "@Damon_Salvatore",
+      text: "El 78 % del tiempo que se destina a cuidados sin remuneración de personas al interior de los hogares proviene de las mujeres. En compañía de @ONUMujeresCol presentamos la infografía Cuidado no remunerado, la igualdad de género inicia en el hogar  https://bit.ly/2Ie8kLJ",
+      img1: newsIcon1,
+      img2: newsIcon2,
+    },
+  },
+  {
+    id: 3,
+    title: "Medios",
+    info: {
+      avatar: avatarIcon,
+      name: "Niklaus Mikaelson",
+      email: "@Niklaus_Mikaelson",
+      text: "El 78 % del tiempo que se destina a cuidados sin remuneración de personas al interior de los hogares proviene de las mujeres. En compañía de @ONUMujeresCol presentamos la infografía Cuidado no remunerado, la igualdad de género inicia en el hogar  https://bit.ly/2Ie8kLJ",
+      img1: newsIcon1,
+      img2: newsIcon2,
+    },
   },
 ];

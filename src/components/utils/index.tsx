@@ -1,8 +1,16 @@
 import React from "react";
 import { HorizontalBox, VerticalBox, ImgBox } from "./style";
 
+// TODO:背景颜色透明度
 interface HorizontalContentProps {
-  width?: "small" | "medium" | "large" | "xLarge" | "almost" | "whole";
+  width?:
+    | "small"
+    | "medium"
+    | "large"
+    | "xLarge"
+    | "almost"
+    | "whole"
+    | "eighth";
   height?:
     | "xxSmall"
     | "minXSmall"
@@ -31,6 +39,7 @@ interface VerticalContentProps {
     | "half";
   height?:
     | "xxSmall"
+    | "minXSmall"
     | "xSmall"
     | "midSmall"
     | "small"
@@ -42,6 +51,7 @@ interface VerticalContentProps {
   children?: React.ReactNode;
   position?: string;
   minWidth?: "small" | "medium" | "large" | "none";
+  justifyContent?: "center" | "spaceBetween";
 }
 
 const widthValues = {
@@ -54,6 +64,7 @@ const widthValues = {
   whole: "100%",
   quarter: "25%",
   half: "50%",
+  eighth: "80%",
 };
 
 const heightValues = {
@@ -122,6 +133,7 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
   children,
   position = "",
   minWidth = "none",
+  justifyContent = "spaceBetween",
 }) => {
   return (
     <VerticalBox
@@ -131,6 +143,7 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
       margin={margin}
       position={position}
       minWidth={minWidthvalues[minWidth]}
+      justifyContent={justifyContentValues[justifyContent]}
     >
       {children && children}
     </VerticalBox>

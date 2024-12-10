@@ -32,6 +32,7 @@ interface VerticalBoxProps {
   margin: string;
   position: string;
   minWidth: string;
+  justifyContent: string;
 }
 export const VerticalBox = styled.div<VerticalBoxProps>`
   height: ${(props) => props.height};
@@ -43,7 +44,7 @@ export const VerticalBox = styled.div<VerticalBoxProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${(props) => props.justifyContent};
   overflow: hidden;
 `;
 
