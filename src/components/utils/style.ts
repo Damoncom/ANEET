@@ -29,6 +29,7 @@ interface VerticalBoxProps {
   backgroundColor: string;
   margin: string;
   position: string;
+  minWidth: string;
 }
 export const VerticalBox = styled.div<VerticalBoxProps>`
   height: ${(props) => props.height};
@@ -36,6 +37,7 @@ export const VerticalBox = styled.div<VerticalBoxProps>`
   background-color: ${(props) => props.backgroundColor};
   margin: ${(props) => props.margin};
   position: ${(props) => props.position};
+  min-width: ${(props) => props.minWidth};
   display: flex;
   flex-direction: column;
   align-items: center;

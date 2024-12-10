@@ -26,6 +26,7 @@ interface VerticalContentProps {
   margin?: string;
   children?: React.ReactNode;
   position?: string;
+  minWidth?: "small" | "medium" | "large" | "none";
 }
 
 const widthValues = {
@@ -64,6 +65,12 @@ const flexWrapValues = {
   nowrap: "nowrap",
   wrap: "wrap",
 };
+const minWidthvalues = {
+  none: "none",
+  small: "290px",
+  medium: "604px",
+  large: "",
+};
 
 export const HorizontalContent: React.FC<HorizontalContentProps> = ({
   width = "whole",
@@ -95,6 +102,7 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
   margin = "0px",
   children,
   position = "",
+  minWidth = "none",
 }) => {
   return (
     <VerticalBox
@@ -103,6 +111,7 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
       backgroundColor={backgroundColorValues[backgroundColor]}
       margin={margin}
       position={position}
+      minWidth={minWidthvalues[minWidth]}
     >
       {children && children}
     </VerticalBox>

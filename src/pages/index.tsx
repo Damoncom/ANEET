@@ -20,7 +20,7 @@ const Home: React.FC = () => {
         position="fixed"
       >
         {/* 左侧 */}
-        <VerticalContent width="quarter" margin="0 3%">
+        <VerticalContent width="quarter" margin="0 3%" minWidth="small">
           <HorizontalContent height="xxSmall" justifyContent="spaceBetween">
             <Button
               width="small"
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
         </VerticalContent>
 
         {/* 中间 */}
-        <VerticalContent width="half" margin="0 3%">
+        <VerticalContent width="half" margin="0 3%" minWidth="medium">
           <VerticalContent width="whole" height="midSmall" position="relative">
             <BGImg src={bannerData.icon} alt="home-banner" />
             <PinToBottom>
@@ -92,7 +92,11 @@ const Home: React.FC = () => {
         </VerticalContent>
 
         {/* 右侧 */}
-        <VerticalContent width="quarter" margin="0 3%"></VerticalContent>
+        <VerticalContent
+          width="quarter"
+          margin="0 3%"
+          minWidth="small"
+        ></VerticalContent>
       </HorizontalContent>
       <Footer />
     </div>
