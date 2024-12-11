@@ -163,9 +163,7 @@ import likeIcon from "../components/icon/home/news/like.png";
 import shareIcon from "../components/icon/home/news/share.png";
 
 const Home: React.FC = () => {
-  const [selectedNewsId, setSelectedNewsId] = React.useState<number | null>(
-    null
-  );
+  const [selectedNewsId, setSelectedNewsId] = React.useState<number | null>(1);
 
   return (
     <div>
@@ -216,7 +214,7 @@ const Home: React.FC = () => {
                 width="whole"
                 height="medium"
                 borderRadius="none"
-                backgroundColor="red"
+                backgroundColor="transparentRed"
                 color="white"
               >
                 <b style={{ margin: "0 5px 0 10px" }}>{bannerData.title}</b>
@@ -249,7 +247,12 @@ const Home: React.FC = () => {
         </VerticalContent>
 
         {/* 右侧 */}
-        <VerticalContent width="quarter" margin="0 3%" minWidth="small">
+        <VerticalContent
+          width="quarter"
+          height="large"
+          margin="0 3%"
+          minWidth="small"
+        >
           <HorizontalContent
             height="minXSmall"
             backgroundColor="white"
@@ -376,6 +379,26 @@ const Home: React.FC = () => {
                 <LittleIcon src={shareIcon} width="midMedium" height="xSmall" />
               </div>
             </div>
+          </HorizontalContent>
+          <HorizontalContent height="sSmall">
+            <Button
+              width="whole"
+              height="xLarge"
+              borderRadius="small"
+              backgroundColor="red"
+              color="white"
+              fontSize="large"
+            >
+              <TextBox>
+                <p
+                  style={{
+                    fontFamily: "'Corbel Light', 'DengXian Light', sans-serif",
+                  }}
+                >
+                  Clasificados
+                </p>
+              </TextBox>
+            </Button>
           </HorizontalContent>
         </VerticalContent>
       </HorizontalContent>

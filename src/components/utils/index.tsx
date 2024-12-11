@@ -14,6 +14,7 @@ interface HorizontalContentProps {
   height?:
     | "xxSmall"
     | "minXSmall"
+    | "sSmall"
     | "xSmall"
     | "midSmall"
     | "small"
@@ -45,6 +46,7 @@ interface VerticalContentProps {
     | "small"
     | "medium"
     | "minMedium"
+    | "xMedium"
     | "large";
   backgroundColor?: "default" | "white";
   margin?: string;
@@ -70,11 +72,13 @@ const widthValues = {
 const heightValues = {
   xxSmall: "40px",
   minXSmall: "55px",
+  sSmall: "80px",
   xSmall: "90px",
   midSmall: "232px",
   small: "249px",
   minMedium: "376px",
   medium: "366px",
+  xMedium: "406px",
   large: "486px",
 };
 

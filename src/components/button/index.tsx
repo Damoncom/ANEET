@@ -4,7 +4,13 @@ import { StyledButton } from "./style";
 // 定义 ButtonProps 接口
 interface ButtonProps {
   borderRadius?: "none" | "small" | "medium" | "large";
-  backgroundColor?: "none" | "white" | "pink" | "red" | "purple";
+  backgroundColor?:
+    | "none"
+    | "white"
+    | "pink"
+    | "red"
+    | "transparentRed"
+    | "purple";
   height?: "small" | "medium" | "large" | "minLarge" | "xLarge" | "xxLarge";
   width?:
     | "small"
@@ -37,6 +43,7 @@ const backgroundColorValues = {
   white: "#ffffff",
   pink: "#DF396B",
   red: "#B6004C",
+  transparentRed: "rgba(182,0,76,0.9)",
   purple: "#7D0641",
 };
 
