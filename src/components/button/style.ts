@@ -10,6 +10,7 @@ interface StyledButtonProps {
   margin: string;
   letterSpacing: string;
   fontWeight: string;
+  hoverBackgroundColor: string;
 }
 
 export const StyledButton = styled.div<StyledButtonProps>`
@@ -23,6 +24,7 @@ export const StyledButton = styled.div<StyledButtonProps>`
   margin: ${(props) => props.margin};
   letter-spacing: ${(props) => props.letterSpacing};
   font-weight: ${(props) => props.fontWeight};
+
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -30,5 +32,6 @@ export const StyledButton = styled.div<StyledButtonProps>`
   overflow: hidden;
   &:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: ${(props) => props.hoverBackgroundColor};
   }
 `;

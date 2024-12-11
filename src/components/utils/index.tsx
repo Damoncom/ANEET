@@ -47,6 +47,7 @@ interface VerticalContentProps {
     | "medium"
     | "minMedium"
     | "xMedium"
+    | "midLarge"
     | "large";
   backgroundColor?: "default" | "white";
   margin?: string;
@@ -79,6 +80,7 @@ const heightValues = {
   minMedium: "376px",
   medium: "366px",
   xMedium: "406px",
+  midLarge: "436px",
   large: "486px",
 };
 

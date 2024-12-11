@@ -22,12 +22,13 @@ interface ButtonProps {
     | "realThird";
   border?: "none" | "red";
   color?: "white" | "red";
-  fontSize?: "small" | "medium" | "xMedium" | "large";
+  fontSize?: "xSmall" | "small" | "medium" | "xMedium" | "large";
   onClick?: () => void;
   children?: React.ReactNode; // ?:把属性标记为可选
   margin?: string;
   letterSpacing?: string;
   fontWeight?: "none" | "medium";
+  hoverBackgroundColor?: string;
 }
 
 // 定义预设值
@@ -77,6 +78,7 @@ const colorValues = {
 };
 
 const fontSizeValues = {
+  xSmall: "13px",
   small: "14px",
   medium: "16px",
   xMedium: "18px",
@@ -101,6 +103,7 @@ const Button: React.FC<ButtonProps> = ({
   margin = "0px",
   letterSpacing = "none",
   fontWeight = "none",
+  hoverBackgroundColor = "",
 }) => {
   return (
     <StyledButton
@@ -114,6 +117,7 @@ const Button: React.FC<ButtonProps> = ({
       margin={margin}
       letterSpacing={letterSpacing}
       fontWeight={fontWeightValues[fontWeight]}
+      hoverBackgroundColor={hoverBackgroundColor}
       onClick={onClick}
     >
       {/* TODO:报错：“children”被指定了两次。将覆盖名为“children”的特性。ts(2710) */}
