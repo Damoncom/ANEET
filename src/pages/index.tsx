@@ -112,13 +112,15 @@ const Home: React.FC = () => {
             {newsData.map((item) => (
               <Button
                 width="realThird"
-                height="minLarge"
+                height="midMedium"
                 border="none"
                 borderRadius="none"
                 fontWeight="medium"
+                borderBottom={selectedNewsId === item.id ? "red" : "none"}
                 key={item.id}
                 onClick={() => setSelectedNewsId(item.id)}
               >
+                {/* TODO:切换抖动 */}
                 <TextBox>{item.title}</TextBox>
               </Button>
             ))}

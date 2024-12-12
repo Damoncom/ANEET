@@ -11,7 +11,14 @@ interface ButtonProps {
     | "red"
     | "transparentRed"
     | "purple";
-  height?: "small" | "medium" | "large" | "minLarge" | "xLarge" | "xxLarge";
+  height?:
+    | "small"
+    | "medium"
+    | "midMedium"
+    | "large"
+    | "minLarge"
+    | "xLarge"
+    | "xxLarge";
   width?:
     | "small"
     | "medium"
@@ -29,6 +36,7 @@ interface ButtonProps {
   letterSpacing?: string;
   fontWeight?: "none" | "medium";
   hoverBackgroundColor?: string;
+  borderBottom?: "none" | "red";
 }
 
 // 定义预设值
@@ -61,6 +69,7 @@ const widthValues = {
 const heightValues = {
   small: "32px",
   medium: "40px",
+  midMedium: "46px",
   large: "48px",
   minLarge: "55px",
   xLarge: "56px",
@@ -90,6 +99,11 @@ const fontWeightValues = {
   medium: "700",
 };
 
+const borderBottomValues = {
+  none: "",
+  red: "2px solid #B6004C",
+};
+
 const Button: React.FC<ButtonProps> = ({
   borderRadius = "medium",
   backgroundColor = "white",
@@ -104,6 +118,7 @@ const Button: React.FC<ButtonProps> = ({
   letterSpacing = "none",
   fontWeight = "none",
   hoverBackgroundColor = "",
+  borderBottom = "none",
 }) => {
   return (
     <StyledButton
@@ -118,6 +133,7 @@ const Button: React.FC<ButtonProps> = ({
       letterSpacing={letterSpacing}
       fontWeight={fontWeightValues[fontWeight]}
       hoverBackgroundColor={hoverBackgroundColor}
+      borderBottom={borderBottomValues[borderBottom]}
       onClick={onClick}
     >
       {/* TODO:报错：“children”被指定了两次。将覆盖名为“children”的特性。ts(2710) */}

@@ -11,6 +11,7 @@ interface StyledButtonProps {
   letterSpacing: string;
   fontWeight: string;
   hoverBackgroundColor: string;
+  borderBottom: string;
 }
 
 export const StyledButton = styled.div<StyledButtonProps>`
@@ -24,6 +25,7 @@ export const StyledButton = styled.div<StyledButtonProps>`
   margin: ${(props) => props.margin};
   letter-spacing: ${(props) => props.letterSpacing};
   font-weight: ${(props) => props.fontWeight};
+  border-bottom: ${(props) => props.borderBottom};
 
   cursor: pointer;
   display: flex;
