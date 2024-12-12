@@ -19,6 +19,7 @@ import {
   Row,
   Cell,
   ChangeButton,
+  ScrollBox,
 } from "./style";
 import { HorizontalContent, VerticalContent } from "../utils";
 import Button from "../button";
@@ -146,35 +147,43 @@ const Calendar: React.FC = () => {
           <TextBox>Cumpleaños</TextBox>
         </Button>
       </HorizontalContent>
-      <VerticalContent
-        width="whole"
-        height="xxSmall"
-        borderBottom="1px solid #BDBDBD"
-        justifyContent="center"
-      >
-        <InfoBox style={{ fontSize: "12px", color: "#333333" }}>
-          Boletin diario
-        </InfoBox>
-        <InfoBox
-          style={{ fontSize: "12px", color: "#000000", fontWeight: "700" }}
+
+      <ScrollBox>
+        <VerticalContent
+          width="whole"
+          height="xxSmall"
+          borderBottom="1px solid #BDBDBD"
+          justifyContent="center"
         >
-          Sábado 25 de abril 2020 | 10am
-        </InfoBox>
-      </VerticalContent>
-      <VerticalContent
-        width="whole"
-        height="xxSmall"
-        borderBottom="1px solid #BDBDBD"
-      >
-        <InfoBox style={{ fontSize: "12px", color: "#333333" }}>
-          Indice de precios
-        </InfoBox>
-        <InfoBox
-          style={{ fontSize: "12px", color: "#000000", fontWeight: "700" }}
+          <InfoBox style={{ fontSize: "12px", color: "#333333" }}>
+            Boletin diario
+          </InfoBox>
+          <InfoBox
+            style={{ fontSize: "12px", color: "#000000", fontWeight: "700" }}
+          >
+            Sábado 25 de abril 2020 | 10am
+          </InfoBox>
+        </VerticalContent>
+        <VerticalContent
+          width="whole"
+          height="xxSmall"
+          borderBottom="1px solid #BDBDBD"
         >
-          Sábado 25 de abril 2020 | 10am
-        </InfoBox>
-      </VerticalContent>
+          <InfoBox style={{ fontSize: "12px", color: "#333333" }}>
+            Indice de precios
+          </InfoBox>
+          <InfoBox
+            style={{ fontSize: "12px", color: "#000000", fontWeight: "700" }}
+          >
+            Sábado 25 de abril 2020 | 10am
+          </InfoBox>
+          <InfoBox
+            style={{ fontSize: "12px", color: "#000000", fontWeight: "700" }}
+          >
+            Sábado 25 de abril 2020 | 10am
+          </InfoBox>
+        </VerticalContent>
+      </ScrollBox>
     </CalendarWrapper>
   );
 };

@@ -19,7 +19,8 @@ interface HorizontalContentProps {
     | "midSmall"
     | "small"
     | "medium"
-    | "large";
+    | "large"
+    | "whole";
   backgroundColor?: "default" | "white" | "red";
   justifyContent?: "center" | "spaceBetween";
   children?: React.ReactNode;
@@ -48,7 +49,8 @@ interface VerticalContentProps {
     | "minMedium"
     | "xMedium"
     | "midLarge"
-    | "large";
+    | "large"
+    | "whole";
   backgroundColor?: "default" | "white";
   margin?: string;
   children?: React.ReactNode;
@@ -56,6 +58,7 @@ interface VerticalContentProps {
   minWidth?: "small" | "medium" | "large" | "none";
   justifyContent?: "center" | "spaceBetween";
   borderBottom?: string;
+  overFlow?: string;
 }
 
 const widthValues = {
@@ -83,6 +86,7 @@ const heightValues = {
   xMedium: "406px",
   midLarge: "436px",
   large: "486px",
+  whole: "100%",
 };
 
 const backgroundColorValues = {
@@ -142,6 +146,7 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
   minWidth = "none",
   justifyContent = "spaceBetween",
   borderBottom = "",
+  overFlow = "hidden",
 }) => {
   return (
     <VerticalBox
@@ -153,6 +158,7 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
       minWidth={minWidthvalues[minWidth]}
       justifyContent={justifyContentValues[justifyContent]}
       borderBottom={borderBottom}
+      overFlow={overFlow}
     >
       {children && children}
     </VerticalBox>

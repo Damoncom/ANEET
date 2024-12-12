@@ -5,7 +5,7 @@ export const CalendarWrapper = styled.div`
   margin: auto;
   background: #fff;
   border-radius: 8px;
-  overflow: hidden;
+  /* overflow: hidden; */
   min-height: calc(
     6 * 37.425px + 5 * 2px + 10px
   ); // 计算出最小高度（假设每个单元格40px高，5行间隔）
@@ -67,4 +67,18 @@ export const Cell = styled.div`
     background-color: #df396b;
     color: white;
   }
+`;
+
+export const ScrollBox = styled.div`
+  height: 80px;
+  overflow: scroll;
+  /* &::-webkit-scrollbar {
+    display: none;
+  } */
+  /*
+  /* 隐藏滚动条，在 Firefox 中 */
+  /* scrollbar-width: none; */
+
+  /* 适用于更现代的 Firefox */
+  /* -ms-overflow-style: none; IE 10+ */
 `;
