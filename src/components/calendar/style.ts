@@ -44,7 +44,8 @@ export const Row = styled.div`
 
 export const Cell = styled.div`
   width: 40px;
-  height: 34.575px;
+  /* height: 34.575px; */
+  aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-items: center;
