@@ -33,6 +33,7 @@ interface VerticalBoxProps {
   position: string;
   minWidth: string;
   justifyContent: string;
+  borderBottom: string;
 }
 export const VerticalBox = styled.div<VerticalBoxProps>`
   height: ${(props) => props.height};
@@ -46,6 +47,7 @@ export const VerticalBox = styled.div<VerticalBoxProps>`
   align-items: center;
   justify-content: ${(props) => props.justifyContent};
   overflow: hidden;
+  border-bottom: ${(props) => props.borderBottom};
 `;
 
 // 背景照片
@@ -77,4 +79,9 @@ export const Mask = styled.div`
   height: 100%;
   background-color: rgba(105, 1, 45, 0.51);
   position: absolute;
+`;
+
+// 标题&描述盒子
+export const InfoBox = styled.div`
+  margin-right: auto;
 `;

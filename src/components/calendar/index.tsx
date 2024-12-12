@@ -20,9 +20,10 @@ import {
   Cell,
   ChangeButton,
 } from "./style";
-import { HorizontalContent } from "../utils";
+import { HorizontalContent, VerticalContent } from "../utils";
 import Button from "../button";
 import TextBox from "../textBox";
+import { InfoBox } from "../utils/style";
 
 const Calendar: React.FC = () => {
   // 用useState管理当前日期状态和选中日期状态
@@ -145,12 +146,35 @@ const Calendar: React.FC = () => {
           <TextBox>Cumpleaños</TextBox>
         </Button>
       </HorizontalContent>
-      <div>
-        <p>Boletin diario</p>
-        <p>Sábado 25 de abril 2020 | 10am</p>
-        <p>Indice de precios</p>
-        <p>Sábado 25 de abril 2020 | 10am</p>
-      </div>
+      <VerticalContent
+        width="whole"
+        height="xxSmall"
+        borderBottom="1px solid #BDBDBD"
+        justifyContent="center"
+      >
+        <InfoBox style={{ fontSize: "12px", color: "#333333" }}>
+          Boletin diario
+        </InfoBox>
+        <InfoBox
+          style={{ fontSize: "12px", color: "#000000", fontWeight: "700" }}
+        >
+          Sábado 25 de abril 2020 | 10am
+        </InfoBox>
+      </VerticalContent>
+      <VerticalContent
+        width="whole"
+        height="xxSmall"
+        borderBottom="1px solid #BDBDBD"
+      >
+        <InfoBox style={{ fontSize: "12px", color: "#333333" }}>
+          Indice de precios
+        </InfoBox>
+        <InfoBox
+          style={{ fontSize: "12px", color: "#000000", fontWeight: "700" }}
+        >
+          Sábado 25 de abril 2020 | 10am
+        </InfoBox>
+      </VerticalContent>
     </CalendarWrapper>
   );
 };

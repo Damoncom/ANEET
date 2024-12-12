@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const CalendarWrapper = styled.div`
-  width: 290px;
+  width: 100%;
   margin: auto;
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   min-height: calc(
     6 * 37.425px + 5 * 2px + 10px
   ); // 计算出最小高度（假设每个单元格40px高，5行间隔）

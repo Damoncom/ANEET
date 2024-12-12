@@ -6,7 +6,7 @@ import { HorizontalContent, VerticalContent, BGImg } from "../components/utils";
 import Button from "../components/button";
 import TextBox from "../components/textBox";
 import { bannerData, plateData, newsData } from "../components/data/homeData";
-import { Mask, PinToBottom } from "../components/utils/style";
+import { Mask, PinToBottom, InfoBox } from "../components/utils/style";
 import LittleIcon from "../components/littleIcon";
 import birdIcon from "../components/icon/home/news/bird.png";
 import likeIcon from "../components/icon/home/news/like.png";
@@ -51,11 +51,9 @@ const Home: React.FC = () => {
               <TextBox>COODANE</TextBox>
             </Button>
           </HorizontalContent>
-          <VerticalContent height="midLarge" margin="0">
+          <VerticalContent width="whole" height="midLarge" margin="0">
             <Calendar />
           </VerticalContent>
-          {/* <HorizontalContent height="xxSmall"></HorizontalContent>
-          <HorizontalContent height="xxSmall"></HorizontalContent> */}
         </VerticalContent>
 
         {/* 中间 */}
@@ -171,24 +169,22 @@ const Home: React.FC = () => {
                     backgroundColor="white"
                     justifyContent="center"
                   >
-                    <div
+                    <InfoBox
                       style={{
-                        marginRight: "auto",
                         fontSize: "10px",
                         color: "#606060",
                       }}
                     >
                       {newsData[selectedNewsId - 1].info.name}
-                    </div>
-                    <div
+                    </InfoBox>
+                    <InfoBox
                       style={{
-                        marginRight: "auto",
                         fontSize: "10px",
                         color: "#979797",
                       }}
                     >
                       {newsData[selectedNewsId - 1].info.email}
-                    </div>
+                    </InfoBox>
                   </VerticalContent>
                 </HorizontalContent>
                 <div style={{ margin: "0 10%" }}>

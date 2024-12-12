@@ -55,6 +55,7 @@ interface VerticalContentProps {
   position?: string;
   minWidth?: "small" | "medium" | "large" | "none";
   justifyContent?: "center" | "spaceBetween";
+  borderBottom?: string;
 }
 
 const widthValues = {
@@ -140,6 +141,7 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
   position = "",
   minWidth = "none",
   justifyContent = "spaceBetween",
+  borderBottom = "",
 }) => {
   return (
     <VerticalBox
@@ -150,6 +152,7 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
       position={position}
       minWidth={minWidthvalues[minWidth]}
       justifyContent={justifyContentValues[justifyContent]}
+      borderBottom={borderBottom}
     >
       {children && children}
     </VerticalBox>
