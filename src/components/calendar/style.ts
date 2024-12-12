@@ -28,6 +28,9 @@ export const ChangeButton = styled.button`
   color: #b10f40;
   cursor: pointer;
   font-size: 16px;
+  &:active {
+    color: #df396b;
+  }
 `;
 
 export const DaysRow = styled.div`
@@ -72,6 +75,9 @@ export const Cell = styled.div`
 export const ScrollBox = styled.div`
   height: 80px;
   overflow: scroll;
+  background-color: #f6f7fb;
+
+  /* TODO:win隐藏不了滚动条？ */
   /* &::-webkit-scrollbar {
     display: none;
   } */

@@ -84,5 +84,7 @@ export const Mask = styled.div`
 
 // 标题&描述盒子
 export const InfoBox = styled.div`
+  width: 95%;
+  margin-left: 10px;
   margin-right: auto;
 `;

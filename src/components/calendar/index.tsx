@@ -25,19 +25,19 @@ import { HorizontalContent, VerticalContent } from "../utils";
 import Button from "../button";
 import TextBox from "../textBox";
 import { InfoBox } from "../utils/style";
+import { Events } from "./data";
 
 const Calendar: React.FC = () => {
   // 用useState管理当前日期状态和选中日期状态
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(currentDate);
+  const [activeEventType, setActiveEventType] = useState<
+    "Actividades" | "Publicaciones" | "Cumpleaños"
+  >("Actividades"); //默认第一个
 
   // 月份增减
-  const nextMonth = () => {
-    setCurrentDate(addMonths(currentDate, 1));
-  };
-  const prevMonth = () => {
-    setCurrentDate(subMonths(currentDate, 1));
-  };
+  const nextMonth = () => setCurrentDate(addMonths(currentDate, 1));
+  const prevMonth = () => setCurrentDate(subMonths(currentDate, 1));
 
   // 渲染日历顶部日期
   const renderHeader = () => (
@@ -84,6 +84,7 @@ const Calendar: React.FC = () => {
         const cloneDay = day;
         const isToday = isSameDay(day, new Date());
         const isSelected = selectedDate && isSameDay(day, selectedDate);
+
         days.push(
           <Cell
             className={`${!isSameMonth(day, monthStart) ? "disabled" : ""} ${
@@ -104,86 +105,80 @@ const Calendar: React.FC = () => {
     return <div style={{ margin: "0 10px" }}>{rows}</div>;
   };
 
+  const renderEvents = () => {
+    if (!selectedDate) return null;
+
+    const dateStr = format(selectedDate, "yyyy-MM-dd");
+    const filteredEvents = Events.filter(
+      (event) => event.date === dateStr && event.type === activeEventType
+    );
+
+    if (filteredEvents.length === 0) {
+      return (
+        <VerticalContent width="whole" height="xxSmall" justifyContent="center">
+          <InfoBox style={{ fontSize: "12px", color: "#999" }}>
+            No hay eventos para esta fecha.
+          </InfoBox>
+        </VerticalContent>
+      );
+    }
+
+    return filteredEvents.map((event, index) => (
+      <VerticalContent
+        key={index}
+        width="whole"
+        height="xxSmall"
+        borderBottom="1px solid #BDBDBD"
+        justifyContent="center"
+      >
+        <InfoBox style={{ fontSize: "12px", color: "#333333" }}>
+          {event.title}
+        </InfoBox>
+        <InfoBox
+          style={{
+            fontSize: "12px",
+            color: "#000000",
+            fontWeight: "700",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
+        >
+          {event.description}
+        </InfoBox>
+      </VerticalContent>
+    ));
+  };
+
   return (
     <CalendarWrapper>
       {renderHeader()}
       {renderDays()}
       {renderCells()}
       <HorizontalContent height="xxSmall" backgroundColor="white">
-        <Button
-          width="realThird"
-          height="large"
-          border="none"
-          borderRadius="none"
-          color="white"
-          fontSize="xSmall"
-          backgroundColor="pink"
-          hoverBackgroundColor="#B6004C"
-        >
-          <TextBox>Actividades</TextBox>
-        </Button>
-        <Button
-          width="realThird"
-          height="large"
-          border="none"
-          borderRadius="none"
-          color="white"
-          fontSize="xSmall"
-          backgroundColor="pink"
-          hoverBackgroundColor="#B6004C"
-        >
-          <TextBox>Publicaciones</TextBox>
-        </Button>
-        <Button
-          width="realThird"
-          height="large"
-          border="none"
-          borderRadius="none"
-          color="white"
-          fontSize="xSmall"
-          backgroundColor="pink"
-          hoverBackgroundColor="#B6004C"
-        >
-          <TextBox>Cumpleaños</TextBox>
-        </Button>
+        {["Actividades", "Publicaciones", "Cumpleaños"].map((type) => (
+          <Button
+            key={type}
+            width="realThird"
+            height="large"
+            border="none"
+            borderRadius="none"
+            color="white"
+            fontSize="xSmall"
+            backgroundColor={activeEventType === type ? "red" : "pink"}
+            hoverBackgroundColor="#B6004C"
+            onClick={() =>
+              setActiveEventType(
+                type as "Actividades" | "Publicaciones" | "Cumpleaños"
+              )
+            }
+          >
+            <TextBox>{type}</TextBox>
+          </Button>
+        ))}
       </HorizontalContent>
 
-      <ScrollBox>
-        <VerticalContent
-          width="whole"
-          height="xxSmall"
-          borderBottom="1px solid #BDBDBD"
-          justifyContent="center"
-        >
-          <InfoBox style={{ fontSize: "12px", color: "#333333" }}>
-            Boletin diario
-          </InfoBox>
-          <InfoBox
-            style={{ fontSize: "12px", color: "#000000", fontWeight: "700" }}
-          >
-            Sábado 25 de abril 2020 | 10am
-          </InfoBox>
-        </VerticalContent>
-        <VerticalContent
-          width="whole"
-          height="xxSmall"
-          borderBottom="1px solid #BDBDBD"
-        >
-          <InfoBox style={{ fontSize: "12px", color: "#333333" }}>
-            Indice de precios
-          </InfoBox>
-          <InfoBox
-            style={{ fontSize: "12px", color: "#000000", fontWeight: "700" }}
-          >
-            Sábado 25 de abril 2020 | 10am
-          </InfoBox>
-          <InfoBox
-            style={{ fontSize: "12px", color: "#000000", fontWeight: "700" }}
-          >
-            Sábado 25 de abril 2020 | 10am
-          </InfoBox>
-        </VerticalContent>
-      </ScrollBox>
+      <ScrollBox>{renderEvents()}</ScrollBox>
     </CalendarWrapper>
   );
 };
