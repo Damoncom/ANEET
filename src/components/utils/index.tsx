@@ -1,7 +1,6 @@
 import React from "react";
 import { HorizontalBox, VerticalBox, ImgBox } from "./style";
 
-// TODO:背景颜色透明度
 interface HorizontalContentProps {
   width?:
     | "small"
@@ -27,6 +26,7 @@ interface HorizontalContentProps {
   flexWrap?: "nowrap" | "wrap";
   position?: string;
   borderBottom?: string;
+  overFlow?: string;
 }
 
 interface VerticalContentProps {
@@ -38,13 +38,15 @@ interface VerticalContentProps {
     | "xxLarge"
     | "whole"
     | "quarter"
-    | "half";
+    | "half"
+    | "eighth";
   height?:
     | "xxSmall"
     | "minXSmall"
     | "xSmall"
     | "midSmall"
     | "small"
+    | "tMedium"
     | "medium"
     | "minMedium"
     | "xMedium"
@@ -79,6 +81,7 @@ const heightValues = {
   minXSmall: "55px",
   sSmall: "80px",
   xSmall: "90px",
+  tMedium: "125px",
   midSmall: "232px",
   small: "249px",
   minMedium: "376px",
@@ -120,6 +123,7 @@ export const HorizontalContent: React.FC<HorizontalContentProps> = ({
   flexWrap = "nowrap",
   position = "",
   borderBottom = "",
+  overFlow = "hidden",
 }) => {
   return (
     <HorizontalBox
@@ -130,6 +134,7 @@ export const HorizontalContent: React.FC<HorizontalContentProps> = ({
       flexWrap={flexWrapValues[flexWrap]}
       position={position}
       borderBottom={borderBottom}
+      overFlow={overFlow}
     >
       {children && children}
     </HorizontalBox>

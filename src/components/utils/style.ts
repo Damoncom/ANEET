@@ -9,6 +9,7 @@ interface HorizontalBoxProps {
   flexWrap: string;
   position: string;
   borderBottom: string;
+  overFlow: string;
 }
 
 export const HorizontalBox = styled.div<HorizontalBoxProps>`
@@ -22,6 +23,7 @@ export const HorizontalBox = styled.div<HorizontalBoxProps>`
   overflow: hidden;
   position: ${(props) => props.position};
   border-bottom: ${(props) => props.borderBottom};
+  overflow: ${(props) => props.overFlow};
 `;
 
 // 纵向盒子
