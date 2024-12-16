@@ -32,6 +32,7 @@ export const StyledButton = styled.div<StyledButtonProps>`
   align-items: center;
   position: relative;
   overflow: hidden;
+  /* TODO:自定义阴影+判断 */
   &:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     background-color: ${(props) => props.hoverBackgroundColor};

@@ -12,6 +12,7 @@ interface HorizontalBoxProps {
   overFlow: string;
   margin: string;
   minWidth: string;
+  borderRadius: string;
 }
 
 export const HorizontalBox = styled.div<HorizontalBoxProps>`
@@ -28,6 +29,7 @@ export const HorizontalBox = styled.div<HorizontalBoxProps>`
   overflow: ${(props) => props.overFlow};
   margin: ${(props) => props.margin};
   min-width: ${(props) => props.minWidth};
+  border-radius: ${(props) => props.borderRadius};
 `;
 
 // 纵向盒子
@@ -95,4 +97,11 @@ export const InfoBox = styled.div`
   width: 95%;
   margin-left: 10px;
   margin-right: auto;
+`;
+
+// 滚动盒子
+export const ScrollBox = styled.div`
+  /* 一定要给一个固定高度 */
+  overflow-y: scroll;
+  background-color: rgb(255, 255, 255);
 `;

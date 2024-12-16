@@ -19,6 +19,7 @@ interface ButtonProps {
     | "large"
     | "minLarge"
     | "xLarge"
+    | "midLarge"
     | "xxLarge"
     | "sixteenth";
   width?:
@@ -76,6 +77,7 @@ const heightValues = {
   large: "48px",
   minLarge: "55px",
   xLarge: "56px",
+  midLarge: "80px",
   xxLarge: "112px",
   sixteenth: "16.6%",
 };

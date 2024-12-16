@@ -9,7 +9,8 @@ interface HorizontalContentProps {
     | "xLarge"
     | "almost"
     | "whole"
-    | "eighth";
+    | "eighth"
+    | "ninth";
   height?:
     | "xxSmall"
     | "minXSmall"
@@ -29,6 +30,7 @@ interface HorizontalContentProps {
   overFlow?: string;
   margin?: string;
   minWidth?: string;
+  borderRadius?: string;
 }
 
 interface VerticalContentProps {
@@ -40,6 +42,7 @@ interface VerticalContentProps {
     | "xxLarge"
     | "whole"
     | "quarter"
+    | "third"
     | "half"
     | "eighth"
     | "ninth";
@@ -77,6 +80,7 @@ const widthValues = {
   almost: "93%",
   whole: "100%",
   quarter: "25%",
+  third: "33.33%",
   half: "50%",
   eighth: "80%",
   ninth: "90%",
@@ -134,6 +138,7 @@ export const HorizontalContent: React.FC<HorizontalContentProps> = ({
   overFlow = "hidden",
   margin = "",
   minWidth = "",
+  borderRadius = "",
 }) => {
   return (
     <HorizontalBox
@@ -147,6 +152,7 @@ export const HorizontalContent: React.FC<HorizontalContentProps> = ({
       overFlow={overFlow}
       margin={margin}
       minWidth={minWidth}
+      borderRadius={borderRadius}
     >
       {children && children}
     </HorizontalBox>

@@ -6,7 +6,7 @@ interface TitleData {
 export const titleData: TitleData = {
   title: "Herramientas",
   description:
-    "En esta sección podrá encontrar toda la información respecto a las herramientas y aplicativos de la entidad los cuales podrá desplegar o enlazar a través de las siguientes categorías:",
+    "En esta sección podrá encontrar toda la información respecto a las herramientas y aplicativos de la entidad los cuales podrá desplegar o enlazar a través de las siguientes categorías:",
 };
 
 interface Tool {
