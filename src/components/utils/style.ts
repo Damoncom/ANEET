@@ -10,6 +10,8 @@ interface HorizontalBoxProps {
   position: string;
   borderBottom: string;
   overFlow: string;
+  margin: string;
+  minWidth: string;
 }
 
 export const HorizontalBox = styled.div<HorizontalBoxProps>`
@@ -24,6 +26,8 @@ export const HorizontalBox = styled.div<HorizontalBoxProps>`
   position: ${(props) => props.position};
   border-bottom: ${(props) => props.borderBottom};
   overflow: ${(props) => props.overFlow};
+  margin: ${(props) => props.margin};
+  min-width: ${(props) => props.minWidth};
 `;
 
 // 纵向盒子
@@ -37,6 +41,7 @@ interface VerticalBoxProps {
   justifyContent: string;
   borderBottom: string;
   overFlow: string;
+  borderRadius: string;
 }
 export const VerticalBox = styled.div<VerticalBoxProps>`
   height: ${(props) => props.height};
@@ -51,6 +56,7 @@ export const VerticalBox = styled.div<VerticalBoxProps>`
   justify-content: ${(props) => props.justifyContent};
   overflow: ${(props) => props.overFlow};
   border-bottom: ${(props) => props.borderBottom};
+  border-radius: ${(props) => props.borderRadius};
 `;
 
 // 背景照片

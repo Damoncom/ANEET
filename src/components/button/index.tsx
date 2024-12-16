@@ -10,7 +10,8 @@ interface ButtonProps {
     | "pink"
     | "red"
     | "transparentRed"
-    | "purple";
+    | "purple"
+    | "lightGrey";
   height?:
     | "small"
     | "medium"
@@ -18,7 +19,8 @@ interface ButtonProps {
     | "large"
     | "minLarge"
     | "xLarge"
-    | "xxLarge";
+    | "xxLarge"
+    | "sixteenth";
   width?:
     | "small"
     | "medium"
@@ -28,7 +30,7 @@ interface ButtonProps {
     | "third"
     | "realThird";
   border?: "none" | "red";
-  color?: "white" | "red";
+  color?: "white" | "red" | "black";
   fontSize?: "xSmall" | "small" | "medium" | "xMedium" | "large";
   onClick?: () => void;
   children?: React.ReactNode; // ?:把属性标记为可选
@@ -54,6 +56,7 @@ const backgroundColorValues = {
   red: "#B6004C",
   transparentRed: "rgba(182,0,76,0.9)",
   purple: "#7D0641",
+  lightGrey: "#F5F6FA",
 };
 
 const widthValues = {
@@ -74,6 +77,7 @@ const heightValues = {
   minLarge: "55px",
   xLarge: "56px",
   xxLarge: "112px",
+  sixteenth: "16.6%",
 };
 
 const borderValues = {
@@ -84,6 +88,7 @@ const borderValues = {
 const colorValues = {
   white: "#ffffff",
   red: "#B6004C",
+  black: "#20253A",
 };
 
 const fontSizeValues = {

@@ -27,6 +27,8 @@ interface HorizontalContentProps {
   position?: string;
   borderBottom?: string;
   overFlow?: string;
+  margin?: string;
+  minWidth?: string;
 }
 
 interface VerticalContentProps {
@@ -39,7 +41,8 @@ interface VerticalContentProps {
     | "whole"
     | "quarter"
     | "half"
-    | "eighth";
+    | "eighth"
+    | "ninth";
   height?:
     | "xxSmall"
     | "minXSmall"
@@ -52,15 +55,17 @@ interface VerticalContentProps {
     | "xMedium"
     | "midLarge"
     | "large"
+    | "eighth"
     | "whole";
   backgroundColor?: "default" | "white";
   margin?: string;
   children?: React.ReactNode;
   position?: string;
   minWidth?: "small" | "medium" | "large" | "none";
-  justifyContent?: "center" | "spaceBetween";
+  justifyContent?: "center" | "spaceBetween" | "start";
   borderBottom?: string;
   overFlow?: string;
+  borderRadius?: string;
 }
 
 const widthValues = {
@@ -74,6 +79,7 @@ const widthValues = {
   quarter: "25%",
   half: "50%",
   eighth: "80%",
+  ninth: "90%",
 };
 
 const heightValues = {
@@ -89,6 +95,7 @@ const heightValues = {
   xMedium: "406px",
   midLarge: "436px",
   large: "486px",
+  eighth: "80%",
   whole: "100%",
 };
 
@@ -101,6 +108,7 @@ const backgroundColorValues = {
 const justifyContentValues = {
   center: "center",
   spaceBetween: "space-between",
+  start: "start",
 };
 
 const flexWrapValues = {
@@ -111,7 +119,7 @@ const minWidthvalues = {
   none: "none",
   small: "290px",
   medium: "604px",
-  large: "",
+  large: "800px",
 };
 
 export const HorizontalContent: React.FC<HorizontalContentProps> = ({
@@ -124,6 +132,8 @@ export const HorizontalContent: React.FC<HorizontalContentProps> = ({
   position = "",
   borderBottom = "",
   overFlow = "hidden",
+  margin = "",
+  minWidth = "",
 }) => {
   return (
     <HorizontalBox
@@ -135,6 +145,8 @@ export const HorizontalContent: React.FC<HorizontalContentProps> = ({
       position={position}
       borderBottom={borderBottom}
       overFlow={overFlow}
+      margin={margin}
+      minWidth={minWidth}
     >
       {children && children}
     </HorizontalBox>
@@ -152,6 +164,7 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
   justifyContent = "spaceBetween",
   borderBottom = "",
   overFlow = "hidden",
+  borderRadius = "",
 }) => {
   return (
     <VerticalBox
@@ -164,6 +177,7 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
       justifyContent={justifyContentValues[justifyContent]}
       borderBottom={borderBottom}
       overFlow={overFlow}
+      borderRadius={borderRadius}
     >
       {children && children}
     </VerticalBox>
