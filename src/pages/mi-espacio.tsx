@@ -97,6 +97,7 @@ const MiEspacio: React.FC = () => (
                       color="black"
                       backgroundColor="lightGrey"
                       margin="10px 0"
+                      enableHover={false}
                       key={product.order}
                     >
                       <InfoBox style={{ marginLeft: "25px" }}>
@@ -124,6 +125,7 @@ const MiEspacio: React.FC = () => (
                       color="black"
                       backgroundColor="lightGrey"
                       margin="10px 0"
+                      enableHover={false}
                       key={product.order}
                     >
                       <InfoBox style={{ marginLeft: "25px" }}>

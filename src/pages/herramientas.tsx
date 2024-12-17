@@ -90,6 +90,7 @@ const Herramientas: React.FC = () => (
                     borderRadius="none"
                     color="black"
                     backgroundColor={index % 2 === 0 ? "lightGrey" : "white"}
+                    enableHover={false}
                     key={product.order}
                   >
                     <InfoBox style={{ marginLeft: "30px" }}>

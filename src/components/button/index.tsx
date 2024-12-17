@@ -40,6 +40,7 @@ interface ButtonProps {
   fontWeight?: "none" | "medium";
   hoverBackgroundColor?: string;
   borderBottom?: "none" | "red";
+  enableHover?: boolean;
 }
 
 // 定义预设值
@@ -126,6 +127,7 @@ const Button: React.FC<ButtonProps> = ({
   fontWeight = "none",
   hoverBackgroundColor = "",
   borderBottom = "none",
+  enableHover = true,
 }) => {
   return (
     <StyledButton
@@ -141,6 +143,7 @@ const Button: React.FC<ButtonProps> = ({
       fontWeight={fontWeightValues[fontWeight]}
       hoverBackgroundColor={hoverBackgroundColor}
       borderBottom={borderBottomValues[borderBottom]}
+      enableHover={enableHover}
       onClick={onClick}
     >
       {/* TODO:报错：“children”被指定了两次。将覆盖名为“children”的特性。ts(2710) */}

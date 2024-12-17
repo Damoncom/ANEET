@@ -12,6 +12,7 @@ interface StyledButtonProps {
   fontWeight: string;
   hoverBackgroundColor: string;
   borderBottom: string;
+  enableHover: boolean;
 }
 
 export const StyledButton = styled.div<StyledButtonProps>`
@@ -32,9 +33,12 @@ export const StyledButton = styled.div<StyledButtonProps>`
   align-items: center;
   position: relative;
   overflow: hidden;
-  /* TODO:自定义阴影+判断 */
+
+  ${({ enableHover }) =>
+    enableHover &&
+    `
   &:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    background-color: ${(props) => props.hoverBackgroundColor};
   }
+  `}
 `;
