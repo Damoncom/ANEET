@@ -60,7 +60,7 @@ const Home: React.FC = () => {
         {/* 中间 */}
         <VerticalContent width="half" margin="0 3%" minWidth="medium">
           <VerticalContent width="whole" height="midSmall" position="relative">
-            <BGImg src={bannerData.icon} alt="home-banner" />
+            <BGImg src={bannerData.icon} alt="home-banner" shouldScale />
             <PinToBottom>
               <Button
                 width="whole"
@@ -90,7 +90,7 @@ const Home: React.FC = () => {
                 fontSize="xMedium"
                 key={item.id}
               >
-                <BGImg src={item.icon} alt={item.name}></BGImg>
+                <BGImg src={item.icon} alt={item.name} shouldScale></BGImg>
                 <Mask />
                 <TextBox>{item.name}</TextBox>
               </Button>

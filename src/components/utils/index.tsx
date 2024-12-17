@@ -193,8 +193,9 @@ export const VerticalContent: React.FC<VerticalContentProps> = ({
 interface BGImgProps {
   src: string;
   alt?: string;
+  shouldScale?: boolean;
 }
 
-export const BGImg: React.FC<BGImgProps> = ({ src, alt }) => {
-  return <ImgBox src={src} alt={alt} />;
+export const BGImg: React.FC<BGImgProps> = ({ src, alt, shouldScale }) => {
+  return <ImgBox src={src} alt={alt} shouldScale={shouldScale} />;
 };

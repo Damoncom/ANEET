@@ -62,16 +62,22 @@ export const VerticalBox = styled.div<VerticalBoxProps>`
 `;
 
 // 背景照片
-export const ImgBox = styled.img`
+export const ImgBox = styled.img<{ shouldScale?: boolean }>`
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: absolute;
   margin: 0;
-  /* transition: transform 2s ease;
-  &:hover {
-    transform: scale(1.5);
-  } */
+
+  // 动态样式基于传入的 shouldScale 属性
+  ${({ shouldScale }) =>
+    shouldScale &&
+    `
+    transition: transform 2s ease;
+    &:hover {
+      transform: scale(1.5);
+    }
+  `}
 `;
 
 // 固定在底部
@@ -83,7 +89,6 @@ export const PinToBottom = styled.div`
   bottom: 0;
 `;
 
-// TODO:加一个判断：是否有缩放效果
 // 蒙版
 export const Mask = styled.div`
   width: 100%;
