@@ -16,7 +16,7 @@ const MiEspacio: React.FC = () => (
     <Navigation />
     <HorizontalContent
       height="large"
-      position="fixed"
+      // position="fixed"
       justifyContent="spaceAround"
     >
       <VerticalContent width="eighth" minWidth="large">

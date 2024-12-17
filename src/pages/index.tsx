@@ -20,11 +20,10 @@ const Home: React.FC = () => {
     <div>
       <Header />
       <Navigation />
-      {/* TODO:不能滚动 */}
       <HorizontalContent
         height="large"
         justifyContent="spaceBetween"
-        position="fixed"
+        // position="fixed"
       >
         {/* 左侧 */}
         <VerticalContent width="quarter" margin="0 3%" minWidth="small">

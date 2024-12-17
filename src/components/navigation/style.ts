@@ -16,4 +16,5 @@ export const PinToTop = styled.div`
   height: 90px;
   position: sticky;
   top: 90px;
+  z-index: 2;
 `;
