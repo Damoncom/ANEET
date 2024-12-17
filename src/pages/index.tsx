@@ -200,7 +200,17 @@ const Home: React.FC = () => {
                 </div>
               </HorizontalContent>
               <HorizontalContent backgroundColor="white">
-                <div style={{ width: "80%", height: "100%", fontSize: "10px" }}>
+                <div
+                  style={{
+                    width: "249px",
+                    fontSize: "10px",
+                    overflow: "hidden",
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                    WebkitLineClamp: 5,
+                    textOverflow: "ellipsis",
+                  }}
+                >
                   {newsData[selectedNewsId - 1].info.text}
                 </div>
               </HorizontalContent>

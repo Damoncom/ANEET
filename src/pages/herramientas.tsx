@@ -35,7 +35,6 @@ const Herramientas: React.FC = () => (
               margin: "17px auto 17px 10px",
             }}
           />
-          {/* TODO:文本未显示完毕用省略号代替 */}
           <InfoBox
             style={{
               fontSize: "14px",
@@ -44,6 +43,9 @@ const Herramientas: React.FC = () => (
               height: "54px",
               width: "53%",
               overflow: "hidden",
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 2,
               textOverflow: "ellipsis",
             }}
           >
