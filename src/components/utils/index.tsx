@@ -22,7 +22,7 @@ interface HorizontalContentProps {
     | "large"
     | "whole";
   backgroundColor?: "default" | "white" | "red";
-  justifyContent?: "center" | "spaceBetween";
+  justifyContent?: "center" | "spaceBetween" | "spaceAround";
   children?: React.ReactNode;
   flexWrap?: "nowrap" | "wrap";
   position?: string;
@@ -113,6 +113,7 @@ const justifyContentValues = {
   center: "center",
   spaceBetween: "space-between",
   start: "start",
+  spaceAround: " space-around",
 };
 
 const flexWrapValues = {

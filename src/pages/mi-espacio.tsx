@@ -14,7 +14,11 @@ const MiEspacio: React.FC = () => (
   <div>
     <Header />
     <Navigation />
-    <HorizontalContent height="large">
+    <HorizontalContent
+      height="large"
+      position="fixed"
+      justifyContent="spaceAround"
+    >
       <VerticalContent width="eighth" minWidth="large">
         {/* 创建项目按钮 */}
         <InfoBox

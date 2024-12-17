@@ -11,8 +11,11 @@ const Herramientas: React.FC = () => (
   <div>
     <Header />
     <Navigation />
-    <HorizontalContent height="large" position="fixed">
-      {/* TODO:左边缩进问题 */}
+    <HorizontalContent
+      height="large"
+      position="fixed"
+      justifyContent="spaceAround"
+    >
       <VerticalContent width="eighth" minWidth="large">
         {/* 标题 */}
         <VerticalContent width="whole" height="tMedium" justifyContent="center">

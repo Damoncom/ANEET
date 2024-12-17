@@ -40,25 +40,27 @@ const Navigation: React.FC = () => {
 
   return (
     <PinToTop>
-      <HorizontalContent>
-        <NavigationButton
-          to="/"
-          icon={homeIcon}
-          label="Home"
-          isActive={currentPath === "/"}
-        />
-        <NavigationButton
-          to="/mi-espacio"
-          icon={miespacioIcon}
-          label="Mi Espacio"
-          isActive={currentPath === "/mi-espacio/"}
-        />
-        <NavigationButton
-          to="/herramientas"
-          icon={herramientasIcon}
-          label="Herramientas"
-          isActive={currentPath === "/herramientas/"}
-        />
+      <HorizontalContent justifyContent="spaceAround">
+        <div style={{ display: "flex" }}>
+          <NavigationButton
+            to="/"
+            icon={homeIcon}
+            label="Home"
+            isActive={currentPath === "/"}
+          />
+          <NavigationButton
+            to="/mi-espacio"
+            icon={miespacioIcon}
+            label="Mi Espacio"
+            isActive={currentPath === "/mi-espacio/"}
+          />
+          <NavigationButton
+            to="/herramientas"
+            icon={herramientasIcon}
+            label="Herramientas"
+            isActive={currentPath === "/herramientas/"}
+          />
+        </div>
       </HorizontalContent>
     </PinToTop>
   );

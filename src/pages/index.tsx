@@ -60,7 +60,7 @@ const Home: React.FC = () => {
         {/* 中间 */}
         <VerticalContent width="half" margin="0 3%" minWidth="medium">
           <VerticalContent width="whole" height="midSmall" position="relative">
-            <BGImg src={bannerData.icon} alt="home-banner" shouldScale />
+            <BGImg src={bannerData.icon} alt="home-banner" />
             <PinToBottom>
               <Button
                 width="whole"
