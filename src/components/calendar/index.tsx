@@ -130,6 +130,7 @@ const Calendar: React.FC = () => {
         height="xxSmall"
         borderBottom="1px solid #BDBDBD"
         justifyContent="center"
+        margin={index === filteredEvents.length - 1 ? "0 0 20px 0" : "0"}
       >
         <InfoBox style={{ fontSize: "12px", color: "#333333" }}>
           {event.title}

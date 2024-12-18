@@ -27,7 +27,7 @@ export const Events: Event[] = [
   {
     date: "2024-12-12",
     type: "Publicaciones",
-    title: "2 Nuevo Artículo Publicado",
+    title: "3 Nuevo Artículo Publicado",
     description: "Un nuevo artículo sobre desarrollo web ha sido publicado.",
   },
   {
