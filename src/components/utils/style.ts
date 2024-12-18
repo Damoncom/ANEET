@@ -109,4 +109,14 @@ export const ScrollBox = styled.div`
   /* 一定要给一个固定高度 */
   overflow-y: scroll;
   background-color: rgb(255, 255, 255);
+
+  /* 隐藏滚动条 */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* 隐藏滚动条，在 Firefox 中 */
+  scrollbar-width: none;
+
+  /* 适用于更现代的 Firefox IE 10+*/
+  -ms-overflow-style: none;
 `;

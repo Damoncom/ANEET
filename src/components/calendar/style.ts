@@ -77,14 +77,13 @@ export const ScrollBox = styled.div`
   overflow: scroll;
   background-color: #f6f7fb;
 
-  /* TODO:win隐藏不了滚动条？ */
-  /* &::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     display: none;
-  } */
+  }
   /*
   /* 隐藏滚动条，在 Firefox 中 */
-  /* scrollbar-width: none; */
+  scrollbar-width: none;
 
-  /* 适用于更现代的 Firefox */
-  /* -ms-overflow-style: none; IE 10+ */
+  /* 适用于更现代的 Firefox IE 10+*/
+  -ms-overflow-style: none;
 `;
