@@ -1,13 +1,13 @@
 import bgIcon from "../icon/miEspacio/c1.png";
 
-interface ProjectData {
+export interface ProjectData {
   id: number;
   title: string;
   uncompleted: TasksGroup;
   completed: TasksGroup;
 }
 
-interface Task {
+export interface Task {
   order: number;
   name: string;
 }

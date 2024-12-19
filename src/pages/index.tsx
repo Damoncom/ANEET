@@ -15,6 +15,7 @@ import Calendar from "../components/calendar";
 
 const Home: React.FC = () => {
   const [selectedNewsId, setSelectedNewsId] = React.useState<number | null>(1);
+  console.log("bannerData:", bannerData);
 
   return (
     <div>

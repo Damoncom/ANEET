@@ -9,6 +9,7 @@ interface LittleIconProps {
   marginLeft?: "small" | "medium" | "large";
   maxWidth?: "none" | "regular";
   boxShadow?: string;
+  onClick?: () => void;
 }
 
 const widthValues = {
@@ -46,6 +47,7 @@ const LittleIcon: React.FC<LittleIconProps> = ({
   marginLeft = "small",
   maxWidth = "none",
   boxShadow = "",
+  onClick,
 }) => {
   return (
     <StyledImg
@@ -56,6 +58,7 @@ const LittleIcon: React.FC<LittleIconProps> = ({
       marginLeft={marginLeftValues[marginLeft]}
       maxWidth={maxWidthValues[maxWidth]}
       boxShadow={boxShadow}
+      onClick={onClick}
     />
   );
 };

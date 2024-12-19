@@ -16,6 +16,13 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `icon`,
+        path: `${__dirname}/src/components/icon/`,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
@@ -34,6 +41,21 @@ module.exports = {
         //   emitWarning: true,
         //   failOnError: false,
         // },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-babel`,
+      options: {
+        plugins: [
+          [
+            "import",
+            {
+              libraryName: "antd",
+              libraryDirectory: "es",
+              style: "css", // 使用 `css` 加载实际的 CSS
+            },
+          ],
+        ],
       },
     },
   ],
