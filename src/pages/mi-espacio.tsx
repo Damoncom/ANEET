@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/header/index";
 import Navigation from "../components/navigation";
 import Footer from "../components/footer";
@@ -14,23 +15,49 @@ import {
 } from "../components/data/miEspacioData";
 import LittleIcon from "../components/littleIcon";
 import menuIcon from "../components/icon/miEspacio/menu.png";
-import { Tooltip } from "antd";
+import styled from "styled-components";
+import editIcon from "../components/icon/miEspacio/editPanel.png";
+// import { Tooltip } from "antd";
+
+const EditPanel = styled.div`
+  width: 126px;
+  height: 77px;
+  left: -4px;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const MiEspacio: React.FC = () => {
+  const [activeProjectId, setActiveProjectId] = useState<number | null>(null);
+
   const editProject = (item: ProjectData) => {
-    console.log("item:", item);
+    // console.log("item:", item);
+    setActiveProjectId((prevId) => (prevId === item.id ? null : item.id));
   };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    if (!target.closest(".edit-panel-icon")) {
+      setActiveProjectId(null);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div>
       <Header />
       <Navigation />
-      <HorizontalContent
-        height="large"
-        // position="fixed"
-        justifyContent="spaceAround"
-      >
-        <VerticalContent width="eighth" minWidth="large">
+      <HorizontalContent height="large" justifyContent="spaceAround">
+        <VerticalContent width="eighth" minWidth="large" overFlow="visible">
           {/* 创建项目按钮 */}
           <InfoBox
             style={{
@@ -51,7 +78,7 @@ const MiEspacio: React.FC = () => {
             </Button>
           </InfoBox>
           {/* 项目内容 */}
-          <HorizontalContent height="small" margin="15px 0">
+          <HorizontalContent height="small" margin="15px 0" overFlow="visible">
             {projectData.map((item: ProjectData) => (
               // 项目名
               <VerticalContent
@@ -61,13 +88,15 @@ const MiEspacio: React.FC = () => {
                 margin="0 2%"
                 borderRadius="4px"
                 justifyContent="center"
+                overFlow="visible"
                 key={item.id}
               >
                 <HorizontalContent
                   width="ninth"
                   height="xxSmall"
                   backgroundColor="white"
-                  // margin="10px 0"
+                  position="relative"
+                  overFlow="visible"
                 >
                   <InfoBox
                     style={{
@@ -79,16 +108,35 @@ const MiEspacio: React.FC = () => {
                   >
                     {item.title}
                   </InfoBox>
-                  <Tooltip title="yes" placement="bottomRight">
-                    <div>
-                      <LittleIcon
-                        src={menuIcon}
-                        alt="menu"
-                        height="xSmall"
-                        onClick={() => editProject(item)}
-                      />
-                    </div>
-                  </Tooltip>
+                  <div
+                    style={{ position: "relative" }}
+                    className="edit-panel-icon"
+                  >
+                    <LittleIcon
+                      src={menuIcon}
+                      alt="menu"
+                      height="xSmall"
+                      onClick={() => editProject(item)}
+                    />
+                    {activeProjectId === item.id && (
+                      <EditPanel>
+                        <BGImg src={editIcon} alt="edit" />
+                        <InfoBox
+                          style={{
+                            padding: "10px",
+                            color: "white",
+                            fontSize: "12px",
+                            lineHeight: "24px",
+                            margin: "3px 0 0 0",
+                            zIndex: 1,
+                          }}
+                        >
+                          <div>Editar</div>
+                          <div>Archivar Proyecto</div>
+                        </InfoBox>
+                      </EditPanel>
+                    )}
+                  </div>
                 </HorizontalContent>
                 {/* 任务 */}
                 <VerticalContent

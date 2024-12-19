@@ -9,6 +9,7 @@ interface LittleIconProps {
   marginLeft?: "small" | "medium" | "large";
   maxWidth?: "none" | "regular";
   boxShadow?: string;
+  children?: React.ReactNode; // 添加这一行
   onClick?: () => void;
 }
 
