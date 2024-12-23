@@ -1,4 +1,4 @@
-import bannerIcon from "../icon/home/banner.png";
+import bannerIcon from "../icon/home/banner/banner.png";
 import c1 from "../icon/home/plate/c1.png";
 import c2 from "../icon/home/plate/c2.png";
 import c3 from "../icon/home/plate/c3.png";

@@ -38,6 +38,7 @@ const MiEspacio: React.FC = () => {
     setActiveProjectId((prevId) => (prevId === item.id ? null : item.id));
   };
 
+  // 全局的点击事件监听器
   const handleClickOutside = (event: MouseEvent) => {
     const target = event.target as HTMLElement;
     if (!target.closest(".edit-panel-icon")) {

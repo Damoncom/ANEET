@@ -19,14 +19,16 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `icon`,
+        name: `icons`,
         path: `${__dirname}/src/components/icon/`,
       },
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-emotion`,
+
     {
       resolve: `gatsby-plugin-typography`,
     },
